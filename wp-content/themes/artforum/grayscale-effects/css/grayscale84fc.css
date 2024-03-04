@@ -1,0 +1,18 @@
+/*
+Version: 1.0
+Author: Nauris Kolāts | Streamline
+Author URI: http://www.majas-lapu-izstrade.lv
+*/
+
+.listpages img {
+	filter: url('../js/filters.svg#grayscale'); /* Firefox 3.5+ */
+	filter: gray; /* IE6-9 */
+	-webkit-filter: grayscale(1); /* Webkit Nightlies & Google Chrome Canary */
+}
+.listpages:hover img {
+	filter: none; /* Applies to FF + IE */
+	-webkit-filter: grayscale(0);
+}
+
+.listpages img { width:100%; height:100%; filter: url('../js/filters.svg#grayscale'); /* Firefox 3.5+ */ filter: gray; /* IE6-9 */ -webkit-filter: grayscale(1); /* Webkit Nightlies & Google Chrome Canary */}
+.listpages:hover img { filter: none; /* Applies to FF + IE */ -webkit-filter: grayscale(0);}
