@@ -1,0 +1,96 @@
+HTTrack3.49-2 launched on Sun, 03 Mar 2024 11:47:31 at https://artforumhair.com/
+(winhttrack https://artforumhair.com/ -O "artforum/artforum" -%v )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+11:48:20	Error: 	"Method Not Allowed" (405) at link https://artforumhair.com/xmlrpc.php (from https://artforumhair.com/)
+11:51:42	Warning: 	Link https://artforumhair.com/cdn-cgi/l/email-protection not scanned (follow robots meta tag)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/plugins/photo-gallery/css/mCSB_buttons.png (from https://artforumhair.com/wp-content/plugins/photo-gallery/css/jquery.mCustomScrollbar.min.css?ver=3.1.5)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/button-gradient.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/button-dark-round-left.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/button-dark-round-right.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/button-light-round-left.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/button-light-round-right.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/icon_info.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/icon_success.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/icon_warning.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/icon_error.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/icon_about.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/accordian-title.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/accordian-content-bg.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/bullet-1.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/bullet-2.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/bullet-3.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/bullet-4.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/bullet-5.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/bullet-6.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/bullet-7.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/bullet-8.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/bullet-9.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Error: 	"Not Found" (404) at link https://artforumhair.com/wp-content/themes/artforum/images/base/bullet-10.png (from https://artforumhair.com/wp-content/themes/artforum/css/style_base.css?ver=6.4.3)
+11:51:42	Warning: 	Moved Permanently for https://artforumhair.com/?p=103
+11:51:42	Warning: 	File has moved from https://artforumhair.com/?p=103 to http://artforumhair.com/gallery/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=25
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=25 to http://artforumhair.com/hair-extensions/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=129
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=129 to http://artforumhair.com/our-products/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=73
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=73 to http://artforumhair.com/%d0%bf%d1%80%d0%b0%d0%b2%d0%b8%d0%bb%d0%bd%d0%b0-%d0%b3%d1%80%d0%b8%d0%b6%d0%b0-%d0%b7%d0%b0-%d0%b5%d0%ba%d1%81%d1%82%d0%b5%d0%bd%d1%88%d1%8a%d0%bd%d0%b8/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=296
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=296 to http://artforumhair.com/tape-in-extensions/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=178
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=178 to http://artforumhair.com/best-hair-extensions-brands-world/
+11:53:24	Warning: 	Found for https://artforumhair.com/en_GB/gallery/
+11:53:24	Warning: 	File has moved from https://artforumhair.com/en_GB/gallery/ to http://artforumhair.com/gallery/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=31
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=31 to http://artforumhair.com/about-us/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=114
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=114 to http://artforumhair.com/about-us/our-main-hairstylist/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=60
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=60 to http://artforumhair.com/about-us/philosophy-beautiful-hair/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=419
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=419 to http://artforumhair.com/2019/07/24/revolution-flixy-hair-extensions-now-everything-is-easier-and-faster/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=344
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=344 to http://artforumhair.com/2018/03/20/art-forums-first-training-course-reality-%d0%b5xpect-future/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=334
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=334 to http://artforumhair.com/2017/12/17/tape-hair-extensions-innovative-technology-hair-bleaching/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=318
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=318 to http://artforumhair.com/2017/10/17/%d0%b8%d0%b7%d1%81%d0%b2%d0%b5%d1%82%d0%bb%d1%8f%d0%b2%d0%b0%d0%bd%d0%b5-%d0%bd%d0%b0-%d0%b5%d0%ba%d1%81%d1%82%d0%b5%d0%bd%d1%88%d1%8a%d0%bd%d0%b8-%d0%ba%d0%b0%d0%ba%d0%b2%d0%be-%d1%82%d1%80%d1%8f/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=277
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=277 to http://artforumhair.com/2017/06/08/wedding-hair-extensions/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=270
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=270 to http://artforumhair.com/2017/05/10/main-human-hair-extensions-types/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=250
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=250 to http://artforumhair.com/2017/04/16/%d0%be%d1%82-%d0%ba%d0%b0%d0%ba%d0%b2%d0%be-%d1%81%d0%b5-%d0%bf%d1%80%d0%b0%d0%b2%d1%8f%d1%82-%d0%b5%d0%ba%d1%81%d1%82%d0%b5%d0%bd%d1%88%d1%8a%d0%bd%d0%b8%d1%82%d0%b5/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=242
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=242 to http://artforumhair.com/2017/04/03/care-hair-extensions-summer/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=224
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=224 to http://artforumhair.com/2017/03/23/things-before-extensions/
+11:53:24	Warning: 	Moved Permanently for https://artforumhair.com/?p=220
+11:53:24	Warning: 	File has moved from https://artforumhair.com/?p=220 to http://artforumhair.com/2017/03/16/main-trends-hairstyles-2017/
+11:53:50	Warning: 	Moved Permanently for https://artforumhair.com/page/1/
+11:53:50	Warning: 	File has moved from https://artforumhair.com/page/1/ to http://artforumhair.com/
+11:53:50	Warning: 	Moved Permanently for https://artforumhair.com/category/uncategorised/page/1/
+11:53:50	Warning: 	File has moved from https://artforumhair.com/category/uncategorised/page/1/ to http://artforumhair.com/category/uncategorised/
+11:53:50	Warning: 	Moved Permanently for https://artforumhair.com/?p=211
+11:53:50	Warning: 	File has moved from https://artforumhair.com/?p=211 to http://artforumhair.com/2017/03/06/hair-wigs-now/
+11:53:55	Warning: 	Moved Permanently for https://artforumhair.com/?p=206
+11:53:55	Warning: 	File has moved from https://artforumhair.com/?p=206 to http://artforumhair.com/2017/02/27/%d1%82%d1%80%d0%b8-%d0%bf%d1%80%d0%b8%d1%87%d0%b8%d0%bd%d0%b8-%d0%b4%d0%b0-%d1%83%d0%b4%d1%8a%d0%bb%d0%b6%d0%b8%d1%82%d0%b5-%d0%ba%d0%be%d1%81%d0%b0%d1%82%d0%b0-%d1%81%d0%b8-%d1%81-%d0%b5%d0%ba%d1%81/
+11:53:55	Warning: 	Moved Permanently for https://artforumhair.com/?p=201
+11:53:55	Warning: 	File has moved from https://artforumhair.com/?p=201 to http://artforumhair.com/2017/02/27/%d0%b5%d0%ba%d1%81%d1%82%d0%b5%d0%bd%d1%88%d1%8a%d0%bd%d0%b8-%d1%81%d1%8a%d1%81-%d1%81%d0%b0%d0%bc%d0%be%d0%b7%d0%b0%d0%bb%d0%b5%d0%bf%d0%b2%d0%b0%d1%89%d0%b8-%d1%81%d0%b5-%d1%81%d1%82%d0%b8%d0%ba/
+11:53:55	Warning: 	Moved Permanently for https://artforumhair.com/?p=190
+11:53:55	Warning: 	File has moved from https://artforumhair.com/?p=190 to http://artforumhair.com/2017/01/29/indian-hair-best-extensions/
+11:53:58	Warning: 	Moved Permanently for https://artforumhair.com/?p=183
+11:53:58	Warning: 	File has moved from https://artforumhair.com/?p=183 to http://artforumhair.com/2017/01/21/hair-color-trends-spring-2017/
+11:53:58	Warning: 	Moved Permanently for https://artforumhair.com/?p=165
+11:53:58	Warning: 	File has moved from https://artforumhair.com/?p=165 to http://artforumhair.com/2017/01/07/o%d0%bc%d0%b1%d1%80%d0%b5-%d0%b5%d0%ba%d1%81%d1%82%d0%b5%d0%bd%d1%88%d1%8a%d0%bd%d0%b8%d1%82%d0%b5-%d0%bf%d1%80%d0%be%d0%b4%d1%8a%d0%bb%d0%b6%d0%b0%d0%b2%d0%b0%d1%82-%d0%b4%d0%b0-%d0%b2%d0%bb%d0%b0/
+11:53:58	Warning: 	Moved Permanently for https://artforumhair.com/?p=153
+11:53:58	Warning: 	File has moved from https://artforumhair.com/?p=153 to http://artforumhair.com/2016/12/24/methods-for-extending-hair/
+11:53:58	Warning: 	Moved Permanently for https://artforumhair.com/?p=144
+11:53:58	Warning: 	File has moved from https://artforumhair.com/?p=144 to http://artforumhair.com/2016/12/18/%d0%ba%d0%b0%d1%83%d0%b7%d0%b0%d1%82%d0%b0-%d0%b4%d0%b0%d1%80%d0%b8-%d0%ba%d0%be%d1%81%d0%b0/
+
+HTTrack Website Copier/3.49-2 mirror complete in 6 minutes 28 seconds : 453 links scanned, 398 files written (33614953 bytes overall) [31506041 bytes received at 81201 bytes/sec], 3282486 bytes transferred using HTTP compression in 216 files, ratio 23%, 28.3 requests per connection
+(24 errors, 61 warnings, 0 messages)
