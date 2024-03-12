@@ -1,0 +1,22 @@
+# main links
+main:
+  - title: "About us"
+    url: /about-us/
+  - title: "Gallery"
+    url: /gallery/
+  - title: "The Best Hair Extensions Brands in the World"
+    url: /best-hair-extensions-brands-world/
+  - title: "Hair Extensions"
+    url: /hair-extensions/
+  - title: "Our Main Hairstylist"
+    url: /our-main-hairstylist/
+  - title: "Our Products"
+    url: /our-products/
+  - title: "Our Philosophy for Beautiful Hair"
+    url: /philosophy-beautiful-hair/
+  - title: "Tape-in Hair Extensions"
+    url: /tape-in-extensions/
+
+bg:
+  - title: "Български"
+    url: https://bg.artforumhair.com/
