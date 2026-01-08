@@ -1,0 +1,77 @@
+{% comment %}
+<!-- Structured Data (JSON-LD) for Organization -->
+{% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Art Forum Hair",
+  "description": "Premium hair extensions salon in Sofia, Bulgaria. Expert hairstylists offering natural human hair extensions, flixy extensions, tape-in extensions, and professional hair care services.",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.url }}{{ site.logo }}",
+  "image": "{{ site.url }}{{ site.og_image }}",
+  "telephone": "+359885501340",
+  "email": "artforumhair@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Zlatovrah 23 Street",
+    "addressLocality": "Sofia",
+    "addressCountry": "BG"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "42.6977",
+    "longitude": "23.3219"
+  },
+  "priceRange": "$$",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "19:00"
+    }
+  ],
+  "sameAs": []
+}
+</script>
+
+{% if page.layout == "single" and page.date %}
+{% comment %}
+<!-- Structured Data for Blog Post -->
+{% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title }}",
+  "description": "{{ seo_description }}",
+  "image": "{% if page_large_image %}{{ page_large_image }}{% else %}{{ site.url }}{{ site.og_image }}{% endif %}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ author.name | default: site.author.name }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}{{ site.logo }}"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ canonical_url }}"
+  }
+}
+</script>
+{% endif %}
+

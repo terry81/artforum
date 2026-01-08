@@ -1,0 +1,19 @@
+{
+  "name": "Art Forum Hair - Premium Hair Extensions Salon",
+  "short_name": "Art Forum Hair",
+  "description": "Premium hair extensions salon in Sofia, Bulgaria",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/images/artforum_logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
+

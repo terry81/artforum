@@ -1,0 +1,14 @@
+# Sitemap Configuration
+# This ensures jekyll-sitemap plugin generates an optimal sitemap
+
+# Default values (these are already good)
+# - Pages: priority 0.5, changefreq weekly
+# - Posts: priority 0.5, changefreq weekly
+# - Homepage: priority 1.0, changefreq daily
+
+# You can customize individual pages by adding to their front matter:
+# sitemap:
+#   priority: 0.8
+#   changefreq: monthly
+#   lastmod: 2026-01-08
+

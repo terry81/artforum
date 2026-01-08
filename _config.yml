@@ -18,16 +18,16 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 locale                   : "en-US"
 title                    : "Art Forum Hair"
 title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
+subtitle                 : "Premium Hair Extensions & Professional Hair Care in Sofia"
 name                     : "Art Forum Hair"
-description              : "Art Forum Hair"
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+description              : "Art Forum Hair - Premium hair extensions salon in Sofia, Bulgaria. Expert hairstylists offering natural human hair extensions, flixy extensions, tape-in extensions, and professional hair care services."
+url                      : "https://artforumhair.com" # Update with your actual domain
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   :
+teaser                   : "/assets/images/hair_image.jpeg"
 logo                     : "/assets/images/artforum_logo.jpeg"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
-# breadcrumbs            : false # true, false (default)
+breadcrumbs              : true # Enable breadcrumbs for better SEO and navigation
 words_per_minute         : 200
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
@@ -58,12 +58,12 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-  hide                   : # true, false (default)
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
-search_provider          : # lunr (default), algolia, google
+  hide                   : false
+search                   : true # Enable site search
+search_full_content      : true # Search full content of posts
+search_provider          : lunr # Use lunr for client-side search
 lunr:
-  search_within_pages    : # true, false (default)
+  search_within_pages    : true # Search within pages as well
 algolia:
   application_id         : # YOUR_APPLICATION_ID
   index_name             : # YOUR_INDEX_NAME
@@ -86,7 +86,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : # Open Graph/Twitter default site image
+og_image                 : "/assets/images/hair_image.jpeg"
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -104,15 +104,18 @@ analytics:
 
 # Site Author
 author:
-  name             : "Albena"
+  name             : "Albena Atanasova"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : #
-  location         : "Zlatovrah” 23 Street, Sofia, Bulgaria"
-  email            :
+  bio              : "Professional Hairstylist & Hair Extensions Expert in Sofia"
+  location         : "Zlatovrah 23 Street, Sofia, Bulgaria"
+  email            : "artforumhair@gmail.com"
   links:
-    - label: "artforumhair@gmail.com"
+    - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      url: "mailto:artforumhair@gmail.com"
+    - label: "Phone"
+      icon: "fas fa-fw fa-phone-square"
+      url: "tel:+359885501340"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -132,30 +135,23 @@ author:
 # Site Footer
 footer:
   links:
-    - label: "artforumhair@gmail.com"
+    - label: "Email Us"
       icon: "fas fa-fw fa-envelope-square"
-      # url:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      # url:
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
-      # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url:
-include: ["_pages"]
+      url: "mailto:artforumhair@gmail.com"
+    - label: "Call Us"
+      icon: "fas fa-fw fa-phone-square"
+      url: "tel:+359885501340"
+    - label: "Location"
+      icon: "fas fa-fw fa-map-marker-alt"
+      url: "https://maps.google.com/?q=Zlatovrah+23+Street,+Sofia,+Bulgaria"
 
 # Reading Files
 include:
   - .htaccess
   - _pages
+  - _headers
+  - robots.txt
+  - manifest.json
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -275,6 +271,10 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+# Custom CSS
+after_footer_scripts:
+  - /assets/css/custom.css
 
 
 
