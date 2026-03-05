@@ -1,1 +1,7 @@
-<div class="page__footer-copyright">Address: "Zlatovrah" 23 Street, Sofia, Bulgaria | +359885501340 | &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}.</div>
+<div class="page__footer-copyright">
+  {% if site.active_lang == 'bg' %}
+    Адрес: ул."Златовръх" 23, София, България | +359885501340 | &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}.
+  {% else %}
+    Address: "Zlatovrah" 23 Street, Sofia, Bulgaria | +359885501340 | &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}.
+  {% endif %}
+</div>

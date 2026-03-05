@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "What are the main human hair extensions types?"
 date: "2017-05-10"
 

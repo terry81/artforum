@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "Wedding with hair extensions"
 date: "2017-06-08"
 

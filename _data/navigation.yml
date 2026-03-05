@@ -4,19 +4,33 @@ main:
     url: /about-us/
   - title: "Gallery"
     url: /gallery/
-  - title: "The Best Hair Extensions Brands in the World"
-    url: /best-hair-extensions-brands-world/
   - title: "Hair Extensions"
     url: /hair-extensions/
+  - title: "Tape-in Extensions"
+    url: /tape-in-extensions/
   - title: "Our Main Hairstylist"
     url: /our-main-hairstylist/
   - title: "Our Products"
     url: /our-products/
-  - title: "Our Philosophy for Beautiful Hair"
+  - title: "Best Brands"
+    url: /best-hair-extensions-brands-world/
+  - title: "Our Philosophy"
     url: /philosophy-beautiful-hair/
-  - title: "Tape-in Hair Extensions"
-    url: /tape-in-extensions/
 
-bg:
-  - title: "Български"
-    url: https://bg.artforumhair.com/
+main-bg:
+  - title: "За нас"
+    url: /about-us/
+  - title: "Галерия"
+    url: /gallery/
+  - title: "Екстеншъни за коса"
+    url: /hair-extensions/
+  - title: "Екстеншъни с лепенки"
+    url: /tape-in-extensions/
+  - title: "Нашият главен коафьор"
+    url: /our-main-hairstylist/
+  - title: "Нашите продукти"
+    url: /our-products/
+  - title: "Най-добрите брандове"
+    url: /best-hair-extensions-brands-world/
+  - title: "Нашата философия"
+    url: /philosophy-beautiful-hair/

@@ -1,0 +1,38 @@
+{% if site.languages and site.languages.size > 1 %}
+<div class="language-switcher">
+  {% if site.active_lang == 'en' %}
+    {% comment %}For English pages, use relative path to go back to Bulgarian root{% endcomment %}
+    {% if page.url == '/' %}
+      <a href="../" class="lang-option" title="Превключи на български">
+        <span class="lang-flag">🇧🇬</span>
+        <span class="lang-name">Български</span>
+      </a>
+    {% else %}
+      {% assign path_parts = page.url | split: '/' %}
+      {% assign bg_path = "" %}
+      {% for part in path_parts %}
+        {% unless forloop.first %}
+          {% if part != "" %}
+            {% assign bg_path = bg_path | append: "../" %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+      {% if page.permalink %}
+        {% assign final_url = bg_path | append: page.permalink | remove_first: '/' %}
+      {% else %}
+        {% assign final_url = bg_path | append: page.url | remove_first: '/' %}
+      {% endif %}
+      <a href="{{ final_url }}" class="lang-option" title="Превключи на български">
+        <span class="lang-flag">🇧🇬</span>
+        <span class="lang-name">Български</span>
+      </a>
+    {% endif %}
+  {% else %}
+    {% comment %}For Bulgarian (default) pages, link to English{% endcomment %}
+    <a href="/en{{ page.url }}" class="lang-option" title="Switch to English">
+      <span class="lang-flag">🇬🇧</span>
+      <span class="lang-name">English</span>
+    </a>
+  {% endif %}
+</div>
+{% endif %}

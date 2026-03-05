@@ -59,6 +59,57 @@ en-GB:
 en-AU:
   <<: *DEFAULT_EN
 
+# Bulgarian
+# ---------
+bg: &DEFAULT_BG
+  skip_links                 : "Прескочи връзки"
+  skip_primary_nav           : "Прескочи към основна навигация"
+  skip_content               : "Прескочи към съдържание"
+  skip_footer                : "Прескочи към футър"
+  page                       : "Страница"
+  pagination_previous        : "Предишна"
+  pagination_next            : "Следваща"
+  breadcrumb_home_label      : "Начало"
+  breadcrumb_separator       : "/"
+  menu_label                 : "Превключи меню"
+  search_label               : "Превключи търсене"
+  toc_label                  : "На тази страница"
+  ext_link_label             : "Директна връзка"
+  less_than                  : "по-малко от"
+  minute_read                : "минути четене"
+  share_on_label             : "Сподели в"
+  meta_label                 :
+  tags_label                 : "Тагове:"
+  categories_label           : "Категории:"
+  date_label                 : "Обновено:"
+  comments_label             : "Оставете коментар"
+  comments_title             : "Коментари"
+  more_label                 : "Научете повече"
+  related_label              : "Може да харесате и"
+  follow_label               : "Последвайте:"
+  feed_label                 : "Емисия"
+  powered_by                 : "Задвижвано от"
+  website_label              : "Уебсайт"
+  email_label                : "Имейл"
+  recent_posts               : "Последни публикации"
+  undefined_wpm              : "Недефиниран параметър words_per_minute в _config.yml"
+  comment_form_info          : "Вашият имейл адрес няма да бъде публикуван. Задължителните полета са маркирани"
+  comment_form_comment_label : "Коментар"
+  comment_form_md_info       : "Markdown се поддържа."
+  comment_form_name_label    : "Име"
+  comment_form_email_label   : "Имейл адрес"
+  comment_form_website_label : "Уебсайт (по желание)"
+  comment_btn_submit         : "Изпрати коментар"
+  comment_btn_submitted      : "Изпратен"
+  comment_success_msg        : "Благодарим за коментара! Той ще бъде показан на сайта след одобрение."
+  comment_error_msg          : "Съжаляваме, възникна грешка при изпращането. Моля уверете се, че всички задължителни полета са попълнени и опитайте отново."
+  loading_label              : "Зареждане..."
+  search_label_text          : "Въведете термин за търсене..."
+  search_placeholder_text    : "Въведете термин за търсене..."
+  search_algolia_no_results  : "Няма резултати"
+  results_found              : "Намерени резултати"
+  back_to_top                : "Обратно нагоре"
+
 # Spanish
 # -------
 es: &DEFAULT_ES

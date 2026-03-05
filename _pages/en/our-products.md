@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "Our Products"
 permalink: /our-products/
 layout: single

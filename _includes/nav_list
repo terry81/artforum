@@ -23,4 +23,9 @@
       </li>
     {% endfor %}
   </ul>
+
+  <!-- Add language switcher at bottom of sidebar -->
+  <div style="padding: 20px 0; margin-top: 10px; border-top: 1px solid #e0e0e0;">
+    {% include language-switcher.html %}
+  </div>
 </nav>

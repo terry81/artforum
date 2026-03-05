@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "The Best Hair Extensions Brands in the World"
 permalink: /best-hair-extensions-brands-world/
 layout: single

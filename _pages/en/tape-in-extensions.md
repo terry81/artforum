@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "Tape-in Hair Extensions"
 permalink: /tape-in-extensions/
 

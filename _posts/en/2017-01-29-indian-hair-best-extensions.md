@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "Why Indian Hair is the Best for Extensions?"
 date: "2017-01-29"
 

@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "How to Care for Hair Extensions in the Summer"
 date: "2017-04-03"
 

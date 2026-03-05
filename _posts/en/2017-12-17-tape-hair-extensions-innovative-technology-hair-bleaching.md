@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "Tape-in Hair Extensions and Our Innovative Technology for Hair Bleaching"
 date: "2017-12-17"
 sidebar:

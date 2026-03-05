@@ -1,18 +1,38 @@
-{% if page.author_profile or layout.author_profile or page.sidebar %}
-  <div class="sidebar sticky">
-  {% if page.sidebar %}
-    {% for s in page.sidebar %}
+{% comment %}Always show sidebar for all pages{% endcomment %}
+<div class="sidebar sticky">
+  {% assign sidebar_config = page.sidebar %}
+
+  {% comment %}Determine which navigation to use{% endcomment %}
+  {% assign nav_to_use = "main" %}
+
+  {% if site.active_lang == 'bg' %}
+    {% assign nav_to_use = "main-bg" %}
+  {% endif %}
+
+  {% if page.sidebar_bg and site.active_lang == 'bg' %}
+    {% assign sidebar_config = page.sidebar_bg %}
+  {% elsif page.sidebar_en and site.active_lang == 'en' %}
+    {% assign sidebar_config = page.sidebar_en %}
+  {% endif %}
+
+  {% comment %}Show sidebar navigation{% endcomment %}
+  {% if sidebar_config %}
+    {% for s in sidebar_config %}
       {% if s.image %}
         <img src="{{ s.image | relative_url }}"
              alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
       {% endif %}
       {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
       {% if s.text %}{{ s.text | markdownify }}{% endif %}
-      {% if s.nav %}{% include nav_list nav=s.nav %}{% endif %}
+      {% if s.nav %}
+        {% include nav_list nav=s.nav %}
+      {% endif %}
     {% endfor %}
-    {% if page.sidebar.nav %}
-      {% include nav_list nav=page.sidebar.nav %}
+    {% if sidebar_config.nav %}
+      {% include nav_list nav=sidebar_config.nav %}
     {% endif %}
+  {% else %}
+    {% comment %}Default: show navigation based on language{% endcomment %}
+    {% include nav_list nav=nav_to_use %}
   {% endif %}
-  </div>
-{% endif %}
+</div>

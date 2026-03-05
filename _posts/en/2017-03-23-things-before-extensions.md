@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "3 Things You should Know Before Getting Extensions"
 date: "2017-03-23"
 

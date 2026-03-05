@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "Art Forum's first training course is a reality! What to еxpect in future!"
 date: "2018-03-20"
 sidebar:
