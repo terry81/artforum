@@ -1,0 +1,10 @@
+<!-- Redirect bg.artforumhair.com to artforumhair.com -->
+<script>
+  (function() {
+    var hostname = window.location.hostname;
+    if (hostname === 'bg.artforumhair.com') {
+      var newUrl = window.location.href.replace('bg.artforumhair.com', 'artforumhair.com');
+      window.location.replace(newUrl);
+    }
+  })();
+</script>

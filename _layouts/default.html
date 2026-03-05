@@ -14,6 +14,7 @@ sidebar:
   <head>
     {% include head.html %}
     {% include head/custom.html %}
+    {% include subdomain-redirect.html %}
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
