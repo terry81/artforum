@@ -1,5 +1,32 @@
+{% if site.footer.links %}
+  <div class="page__footer-follow">
+    <ul class="social-icons">
+      {% for link in site.footer.links %}
+        <li>
+          <a href="{{ link.url }}" rel="nofollow noopener noreferrer">
+            <i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i>
+            {% if page.lang == 'bg' or site.active_lang == 'bg' %}
+              {% if link.label == "Email Us" %}
+                {{ site.data.ui-text[site.locale].footer_email_us | default: "Пишете ни" }}
+              {% elsif link.label == "Call Us" %}
+                {{ site.data.ui-text[site.locale].footer_call_us | default: "Обадете се" }}
+              {% elsif link.label == "Location" %}
+                {{ site.data.ui-text[site.locale].footer_location | default: "Локация" }}
+              {% else %}
+                {{ link.label }}
+              {% endif %}
+            {% else %}
+              {{ link.label }}
+            {% endif %}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+
 <div class="page__footer-copyright">
-  {% if site.active_lang == 'bg' %}
+  {% if page.lang == 'bg' or site.active_lang == 'bg' %}
     Адрес: ул."Златовръх" 23, София, България | +359885501340 | &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}.
   {% else %}
     Address: "Zlatovrah" 23 Street, Sofia, Bulgaria | +359885501340 | &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}.

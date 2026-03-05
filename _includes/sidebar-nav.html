@@ -2,7 +2,7 @@
 <nav class="sidebar-nav-panel" id="sidebarNav">
   <div class="sidebar-nav-panel__header">
     <h2 class="sidebar-nav-panel__title">
-      {% if site.active_lang == 'bg' %}
+      {% if page.lang == 'bg' or site.active_lang == 'bg' %}
         Меню
       {% else %}
         Menu
@@ -11,7 +11,7 @@
   </div>
 
   <ul class="sidebar-nav-panel__menu">
-    {%- if site.active_lang == 'bg' -%}
+    {%- if page.lang == 'bg' or site.active_lang == 'bg' -%}
       {%- assign navigation = site.data.navigation.main-bg -%}
     {%- else -%}
       {%- assign navigation = site.data.navigation.main -%}

@@ -2,16 +2,18 @@
 <div class="sidebar sticky">
   {% assign sidebar_config = page.sidebar %}
 
-  {% comment %}Determine which navigation to use{% endcomment %}
+  {% comment %}Determine which navigation to use based on language{% endcomment %}
   {% assign nav_to_use = "main" %}
 
-  {% if site.active_lang == 'bg' %}
+  {% comment %}Check page.lang first (for posts), then site.active_lang (for polyglot){% endcomment %}
+  {% if page.lang == 'bg' or site.active_lang == 'bg' %}
     {% assign nav_to_use = "main-bg" %}
   {% endif %}
 
-  {% if page.sidebar_bg and site.active_lang == 'bg' %}
+  {% comment %}Use language-specific sidebar if defined{% endcomment %}
+  {% if page.sidebar_bg and (page.lang == 'bg' or site.active_lang == 'bg') %}
     {% assign sidebar_config = page.sidebar_bg %}
-  {% elsif page.sidebar_en and site.active_lang == 'en' %}
+  {% elsif page.sidebar_en and (page.lang == 'en' or site.active_lang == 'en') %}
     {% assign sidebar_config = page.sidebar_en %}
   {% endif %}
 

@@ -75,8 +75,15 @@ sidebar:
     <div class="page__related">
       <h2 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h2>
       <div class="grid__wrapper">
-        {% for post in site.related_posts limit:4 %}
-          {% include archive-single.html type="grid" %}
+        {% assign related_count = 0 %}
+        {% for post in site.related_posts %}
+          {% if post.lang == page.lang %}
+            {% include archive-single.html type="grid" %}
+            {% assign related_count = related_count | plus: 1 %}
+            {% if related_count >= 4 %}
+              {% break %}
+            {% endif %}
+          {% endif %}
         {% endfor %}
       </div>
     </div>
@@ -85,11 +92,18 @@ sidebar:
     <div class="page__related">
       <h2 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h2>
       <div class="grid__wrapper">
-        {% for post in site.posts limit:4 %}
+        {% assign recent_count = 0 %}
+        {% for post in site.posts %}
           {% if post.id == page.id %}
             {% continue %}
           {% endif %}
-          {% include archive-single.html type="grid" %}
+          {% if post.lang == page.lang %}
+            {% include archive-single.html type="grid" %}
+            {% assign recent_count = recent_count | plus: 1 %}
+            {% if recent_count >= 4 %}
+              {% break %}
+            {% endif %}
+          {% endif %}
         {% endfor %}
       </div>
     </div>

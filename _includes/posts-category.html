@@ -1,5 +1,8 @@
+{%- assign current_lang = page.lang | default: site.active_lang -%}
 {%- for post in site.categories[include.taxonomy] -%}
   {%- unless post.hidden -%}
-    {% include archive-single.html %}
+    {%- if post.lang == current_lang -%}
+      {% include archive-single.html %}
+    {%- endif -%}
   {%- endunless -%}
 {%- endfor -%}

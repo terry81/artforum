@@ -8,8 +8,9 @@ layout: archive
 <div class="entries-{{ entries_layout }}">
   {% assign post_count = 0 %}
   {% assign posts_per_page = site.paginate | default: 5 %}
+  {% assign current_lang = page.lang | default: site.active_lang %}
   {% for post in site.posts %}
-    {% if post.lang == site.active_lang %}
+    {% if post.lang == current_lang %}
       {% if post_count < posts_per_page %}
         {% include archive-single.html type=entries_layout %}
         {% assign post_count = post_count | plus: 1 %}
