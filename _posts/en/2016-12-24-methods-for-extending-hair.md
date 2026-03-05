@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "Methods for Extending Hair"
 date: "2016-12-24"
 

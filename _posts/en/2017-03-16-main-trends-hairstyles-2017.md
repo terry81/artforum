@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "Main Trends in Hairstyles for 2017"
 date: "2017-03-16"
 

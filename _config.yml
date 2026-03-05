@@ -15,10 +15,11 @@
 minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
+locale                   : "bg"
 title                    : "Art Forum Hair"
 title_separator          : "-"
 subtitle                 : "Premium Hair Extensions & Professional Hair Care in Sofia"
+subtitle_bg              : "Премиум Екстеншъни и Професионални Грижи за Коса в София"
 name                     : "Art Forum Hair"
 description              : "Art Forum Hair - Premium hair extensions salon in Sofia, Bulgaria. Expert hairstylists offering natural human hair extensions, flixy extensions, tape-in extensions, and professional hair care services."
 url                      : "https://artforumhair.com" # Update with your actual domain
@@ -59,7 +60,7 @@ reCaptcha:
 atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : false
-search                   : true # Enable site search
+search                   : false # Disable site search
 search_full_content      : true # Search full content of posts
 search_provider          : lunr # Use lunr for client-side search
 lunr:
@@ -226,6 +227,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-polyglot
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -272,9 +274,9 @@ compress_html:
   ignore:
     envs: development
 
-# Custom CSS
+# Custom scripts
 after_footer_scripts:
-  - /assets/css/custom.css
+  - /assets/js/dropdown-menu.js
 
 
 
@@ -291,3 +293,16 @@ defaults:
       comments: false
       share: true
       related: true
+  # _pages - add sidebar to all pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+
+# Polyglot Settings
+languages: ["bg", "en"]
+default_lang: "bg"
+exclude_from_localization: ["assets", "node_modules"]
+parallel_localization: true

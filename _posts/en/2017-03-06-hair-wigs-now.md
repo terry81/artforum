@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "The Hair Wigs - Before and Now"
 date: "2017-03-06"
 

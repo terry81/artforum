@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "Hair Color Trends for Spring 2017"
 date: "2017-01-21"
 

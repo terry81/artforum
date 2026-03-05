@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "Our Main Hairstylist"
 permalink: /our-main-hairstylist/
 layout: single

@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "About Art Forum Hair - Premium Hair Extensions Salon in Sofia"
 permalink: /about-us/
 excerpt: "Art Forum Hair is Sofia's premier hair extensions salon. Meet our expert hairstylists and discover our professional hair extension services."

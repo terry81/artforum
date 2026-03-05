@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "Hair Extensions"
 permalink: /hair-extensions/
 layout: single

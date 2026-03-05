@@ -5,6 +5,7 @@ img {
   loading: lazy;
   max-width: 100%;
   height: auto;
+  border-radius: 4px; /* Subtle rounded corners for images */
 }
 
 /* Add smooth scrolling */
@@ -116,6 +117,187 @@ img[loading="lazy"] {
 
   .page__content {
     max-width: 100%;
+  }
+}
+
+/* === SUBTLE ENHANCEMENTS === */
+
+/* Improve masthead styling */
+.masthead {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-title {
+  transition: color 0.2s ease;
+}
+
+.site-subtitle {
+  opacity: 0.9;
+}
+
+/* Enhance sidebar navigation */
+.sidebar {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+
+/* Hide the accordion toggle and keep menu always visible */
+.nav__list input[type="checkbox"] {
+  display: none;
+}
+
+.nav__list label[for="ac-toc"] {
+  cursor: default;
+  user-select: none;
+}
+
+.nav__items {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.nav__items a {
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.nav__items a:hover {
+  background: rgba(0, 102, 204, 0.08);
+  padding-left: 1.2rem;
+}
+
+/* Improve language switcher appearance */
+.language-switcher {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.lang-option {
+  transition: all 0.25s ease;
+}
+
+.lang-option:hover {
+  transform: translateY(-2px);
+}
+
+/* Enhance content cards */
+.list__item {
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.list__item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
+}
+
+.archive__item-title a {
+  transition: color 0.2s ease;
+}
+
+/* Improve hero section readability */
+.page__hero--overlay .page__title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page__hero--overlay .page__lead {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Better spacing for content */
+.page__content h2,
+.page__content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.page__content p {
+  margin-bottom: 1.2rem;
+}
+
+/* Improve footer styling */
+.page__footer {
+  background-color: #4a2c2a; /* Dark maroon/brown color */
+  color: #f5f5f5;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.page__footer-copyright {
+  color: #f5f5f5;
+}
+
+.page__footer a {
+  color: #d4a574; /* Lighter complementary color for links */
+}
+
+.page__footer a:hover {
+  color: #e8c89e;
+}
+
+/* Better link styling */
+.page__content a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+/* Improve form inputs (if any) */
+input[type="text"],
+input[type="email"],
+input[type="search"],
+textarea {
+  border-radius: 4px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+/* Better table styling */
+table {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Improve code blocks */
+code {
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+}
+
+pre {
+  border-radius: 4px;
+}
+
+/* Subtle animation for page load */
+.initial-content > * {
+  animation: fadeInContent 0.5s ease;
+}
+
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Better mobile experience */
+@media (max-width: 768px) {
+  .sidebar {
+    margin-bottom: 1.5rem;
+  }
+
+  .nav__items a {
+    padding: 0.8rem 1rem;
   }
 }
 

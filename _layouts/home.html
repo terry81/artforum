@@ -1,22 +1,25 @@
 ---
 layout: archive
-sidebar:
-  nav: main
 ---
 
 {{ content }}
 
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
-
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 <div class="entries-{{ entries_layout }}">
-  {% for post in posts %}
-    {% include archive-single.html type=entries_layout %}
+  {% assign post_count = 0 %}
+  {% assign posts_per_page = site.paginate | default: 5 %}
+  {% for post in site.posts %}
+    {% if post.lang == site.active_lang %}
+      {% if post_count < posts_per_page %}
+        {% include archive-single.html type=entries_layout %}
+        {% assign post_count = post_count | plus: 1 %}
+      {% endif %}
+    {% endif %}
   {% endfor %}
 </div>
 
-{% include paginator.html %}
+{% comment %}
+Note: Pagination disabled for multilingual support.
+Jekyll-paginate doesn't work well with Polyglot.
+Showing first 5 posts per language.
+{% endcomment %}

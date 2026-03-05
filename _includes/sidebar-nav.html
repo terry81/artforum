@@ -1,0 +1,92 @@
+<!-- Sidebar Navigation Panel -->
+<nav class="sidebar-nav-panel" id="sidebarNav">
+  <div class="sidebar-nav-panel__header">
+    <h2 class="sidebar-nav-panel__title">
+      {% if site.active_lang == 'bg' %}
+        Меню
+      {% else %}
+        Menu
+      {% endif %}
+    </h2>
+  </div>
+
+  <ul class="sidebar-nav-panel__menu">
+    {%- if site.active_lang == 'bg' -%}
+      {%- assign navigation = site.data.navigation.main-bg -%}
+    {%- else -%}
+      {%- assign navigation = site.data.navigation.main -%}
+    {%- endif -%}
+
+    {%- for link in navigation -%}
+      <li>
+        <a href="{{ link.url | relative_url }}"{% if page.url == link.url %} class="active"{% endif %}>
+          {{ link.title }}
+        </a>
+      </li>
+    {%- endfor -%}
+  </ul>
+
+  <div class="sidebar-nav-panel__footer">
+    {% include language-switcher.html %}
+  </div>
+</nav>
+
+<!-- Mobile toggle button -->
+<button class="sidebar-nav-toggle" id="sidebarToggle" aria-label="Toggle navigation menu">
+  <i class="fas fa-bars"></i>
+</button>
+
+<!-- Mobile overlay -->
+<div class="sidebar-nav-overlay" id="sidebarOverlay"></div>
+
+<script>
+(function() {
+  'use strict';
+
+  // Wait for DOM to be ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSidebar);
+  } else {
+    initSidebar();
+  }
+
+  function initSidebar() {
+    const sidebar = document.getElementById('sidebarNav');
+    const toggle = document.getElementById('sidebarToggle');
+    const overlay = document.getElementById('sidebarOverlay');
+
+    if (!sidebar || !toggle || !overlay) return;
+
+    // Toggle sidebar on mobile
+    toggle.addEventListener('click', function() {
+      sidebar.classList.toggle('is-open');
+      overlay.classList.toggle('is-visible');
+    });
+
+    // Close sidebar when clicking overlay
+    overlay.addEventListener('click', function() {
+      sidebar.classList.remove('is-open');
+      overlay.classList.remove('is-visible');
+    });
+
+    // Close sidebar on ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        sidebar.classList.remove('is-open');
+        overlay.classList.remove('is-visible');
+      }
+    });
+
+    // Close sidebar when clicking a link on mobile
+    const links = sidebar.querySelectorAll('a');
+    links.forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 1024) {
+          sidebar.classList.remove('is-open');
+          overlay.classList.remove('is-visible');
+        }
+      });
+    });
+  }
+})();
+</script>

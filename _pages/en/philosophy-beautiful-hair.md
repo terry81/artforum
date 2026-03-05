@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "Our Philosophy for Beautiful Hair"
 permalink: /philosophy-beautiful-hair/
 

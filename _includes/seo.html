@@ -7,7 +7,12 @@
 {% assign title_separator = site.title_separator | default: '-' | replace: '|', '&#124;' %}
 
 {%- if page.title -%}
-  {%- assign seo_title = page.title | append: " " | append: title_separator | append: " " | append: site.title -%}
+  {%- if site.active_lang and page.title_translation[site.active_lang] -%}
+    {%- assign page_title = page.title_translation[site.active_lang] -%}
+  {%- else -%}
+    {%- assign page_title = page.title -%}
+  {%- endif -%}
+  {%- assign seo_title = page_title | append: " " | append: title_separator | append: " " | append: site.title -%}
 {%- endif -%}
 
 {%- if seo_title -%}
@@ -21,6 +26,9 @@
 {% endif %}
 
 {%- assign seo_description = page.description | default: page.excerpt | default: site.description -%}
+{%- if site.active_lang and page.excerpt_translation[site.active_lang] -%}
+  {%- assign seo_description = page.excerpt_translation[site.active_lang] -%}
+{%- endif -%}
 {%- if seo_description -%}
   {%- assign seo_description = seo_description | markdownify | strip_html | newline_to_br | strip_newlines | replace: '<br />', ' ' | escape_once | strip -%}
 {%- endif -%}
@@ -58,7 +66,11 @@
 {% endif %}
 
 <meta property="og:type" content="{{ og_type }}">
-<meta property="og:locale" content="{{ site.locale | replace: "-", "_" | default: "en_US" }}">
+{% if site.active_lang == 'bg' %}
+<meta property="og:locale" content="bg_BG">
+{% else %}
+<meta property="og:locale" content="en_US">
+{% endif %}
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
 <meta property="og:url" content="{{ canonical_url }}">
@@ -113,6 +125,12 @@
 {% endif %}
 
 <link rel="canonical" href="{{ canonical_url }}">
+
+{% if site.languages %}
+  {% for lang in site.languages %}
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ site.baseurl_root }}/{{ lang }}{{ page.url }}" />
+  {% endfor %}
+{% endif %}
 
 {% if paginator.previous_page %}
   <link rel="prev" href="{{ paginator.previous_page_path | absolute_url }}">
