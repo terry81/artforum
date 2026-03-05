@@ -27,11 +27,21 @@
       {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
       {% if s.text %}{{ s.text | markdownify }}{% endif %}
       {% if s.nav %}
-        {% include nav_list nav=s.nav %}
+        {% comment %}Override nav with language-specific version if needed{% endcomment %}
+        {% assign nav_value = s.nav %}
+        {% if s.nav == "main" and (page.lang == 'bg' or site.active_lang == 'bg') %}
+          {% assign nav_value = "main-bg" %}
+        {% endif %}
+        {% include nav_list nav=nav_value %}
       {% endif %}
     {% endfor %}
     {% if sidebar_config.nav %}
-      {% include nav_list nav=sidebar_config.nav %}
+      {% comment %}Override nav with language-specific version if needed{% endcomment %}
+      {% assign nav_value = sidebar_config.nav %}
+      {% if sidebar_config.nav == "main" and (page.lang == 'bg' or site.active_lang == 'bg') %}
+        {% assign nav_value = "main-bg" %}
+      {% endif %}
+      {% include nav_list nav=nav_value %}
     {% endif %}
   {% else %}
     {% comment %}Default: show navigation based on language{% endcomment %}
