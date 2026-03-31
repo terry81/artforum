@@ -23,14 +23,14 @@
 
 <meta property="og:site_name" content="Art Forum Hair">
 <meta property="og:title" content="Premium Hair Extensions Salon in Sofia">
-<meta property="og:url" content="http://localhost:4000/page3/">
+<meta property="og:url" content="https://artforumhair.com/page3/">
 
 
   <meta property="og:description" content="Art Forum Hair предлага първокласни екстеншъни от естествена коса, професионално стилизиране и експертни услуги за грижа за косата в София, България. Трансформирайте визията си с нашите висококачествени екстеншъни от гъвкава, лентова и човешка коса.">
 
 
 
-  <meta property="og:image" content="http://localhost:4000/assets/images/GPA9099.jpg">
+  <meta property="og:image" content="https://artforumhair.com/assets/images/GPA9099.jpg">
 
 
 
@@ -45,21 +45,21 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/page3/">
+<link rel="canonical" href="https://artforumhair.com/page3/">
 
 
   
-    <link rel="alternate" hreflang="bg" href="http://localhost:4000/bg/page3/" />
+    <link rel="alternate" hreflang="bg" href="https://artforumhair.com/bg/page3/" />
   
-    <link rel="alternate" hreflang="en" href="http://localhost:4000/en/page3/" />
+    <link rel="alternate" hreflang="en" href="https://artforumhair.com/en/page3/" />
   
 
 
 
-  <link rel="prev" href="http://localhost:4000/page2/">
+  <link rel="prev" href="https://artforumhair.com/page2/">
 
 
-  <link rel="next" href="http://localhost:4000/page4/">
+  <link rel="next" href="https://artforumhair.com/page4/">
 
 
 <script type="application/ld+json">
@@ -68,7 +68,7 @@
     
       "@type": "Person",
       "name": "Art Forum Hair",
-      "url": "http://localhost:4000/"
+      "url": "https://artforumhair.com/"
     
   }
 </script>
@@ -88,9 +88,9 @@
   "@type": "HairSalon",
   "name": "Art Forum Hair",
   "description": "Premium hair extensions salon in Sofia, Bulgaria. Expert hairstylists offering natural human hair extensions, flixy extensions, tape-in extensions, and professional hair care services.",
-  "url": "http://localhost:4000",
-  "logo": "http://localhost:4000/assets/images/artforum_logo.jpeg",
-  "image": "http://localhost:4000/assets/images/hair_image.jpeg",
+  "url": "https://artforumhair.com",
+  "logo": "https://artforumhair.com/assets/images/artforum_logo.jpeg",
+  "image": "https://artforumhair.com/assets/images/hair_image.jpeg",
   "telephone": "+359885501340",
   "email": "artforumhair@gmail.com",
   "address": {
@@ -159,6 +159,17 @@
 <link rel="stylesheet" href="/assets/css/custom.css">
 
 <!-- end custom head snippets -->
+
+    <!-- Redirect bg.artforumhair.com to artforumhair.com -->
+<script>
+  (function() {
+    var hostname = window.location.hostname;
+    if (hostname === 'bg.artforumhair.com') {
+      var newUrl = window.location.href.replace('bg.artforumhair.com', 'artforumhair.com');
+      window.location.replace(newUrl);
+    }
+  })();
+</script>
 
   </head>
 
@@ -259,11 +270,13 @@
   
 
   
-
   
 
   
   
+
+  
+  
     
       
       
@@ -271,6 +284,9 @@
       
     
     
+      
+      
+      
       
 
 <nav class="nav__list">
@@ -373,6 +389,7 @@
 
 
 <div class="entries-list">
+  
   
   
   
@@ -575,9 +592,50 @@
         <!-- start custom footer snippets -->
 
 <!-- end custom footer snippets -->
-        <div class="page__footer-copyright">
+        
+  <div class="page__footer-follow">
+    <ul class="social-icons">
+      
+        <li>
+          <a href="mailto:artforumhair@gmail.com" rel="nofollow noopener noreferrer">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i>
+            
+              
+                Пишете ни
+              
+            
+          </a>
+        </li>
+      
+        <li>
+          <a href="tel:+359885501340" rel="nofollow noopener noreferrer">
+            <i class="fas fa-fw fa-phone-square" aria-hidden="true"></i>
+            
+              
+                Обадете се
+              
+            
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://maps.google.com/?q=Zlatovrah+23+Street,+Sofia,+Bulgaria" rel="nofollow noopener noreferrer">
+            <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i>
+            
+              
+                Локация
+              
+            
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+<div class="page__footer-copyright">
   
-    Address: "Zlatovrah" 23 Street, Sofia, Bulgaria | +359885501340 | &copy; 2026 Art Forum Hair.
+    Адрес: ул."Златовръх" 23, София, България | +359885501340 | &copy; 2026 Art Forum Hair.
   
 </div>
 
@@ -594,10 +652,6 @@
 
 
 
-  
-    <script src="/assets/css/custom.css"></script>
-  
-    <script src="/assets/css/sidebar-nav.css"></script>
   
     <script src="/assets/js/dropdown-menu.js"></script>
   
