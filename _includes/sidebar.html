@@ -22,7 +22,9 @@
     {% for s in sidebar_config %}
       {% if s.image %}
         <img src="{{ s.image | relative_url }}"
-             alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
+             alt="{% if s.image_alt %}{{ s.image_alt | escape_once }}{% endif %}"
+             loading="lazy"
+             decoding="async">
       {% endif %}
       {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
       {% if s.text %}{{ s.text | markdownify }}{% endif %}

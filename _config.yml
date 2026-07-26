@@ -25,7 +25,7 @@ description              : "Art Forum Hair - Premium hair extensions salon in So
 url                      : "https://artforumhair.com" # Update with your actual domain
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : "/assets/images/hair_image.jpeg"
+teaser                   : "/assets/images/artforum-teaser.webp"
 logo                     : "/assets/images/artforum_logo.jpeg"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # Enable breadcrumbs for better SEO and navigation
@@ -87,7 +87,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : "/assets/images/hair_image.jpeg"
+og_image                 : "/assets/images/GPA9099.jpg"
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -164,6 +164,7 @@ exclude:
   - assets/js/plugins
   - assets/js/_main.js
   - assets/js/vendor
+  - assets/images/gallery_BACK
   - Capfile
   - CHANGELOG
   - config

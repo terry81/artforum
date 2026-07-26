@@ -7,9 +7,10 @@ excerpt: "Art Forum Hair offers premium natural hair extensions, professional st
 excerpt_translation:
   bg: "Art Forum Hair предлага първокласни екстеншъни от естествена коса, професионално стилизиране и експертни услуги за грижа за косата в София, България. Трансформирайте визията си с нашите висококачествени екстеншъни от гъвкава, лентова и човешка коса."
 author_profile: false
+entries_layout: grid
 header:
   overlay_image: /assets/images/GPA9099.jpg
-  overlay_filter: 0.5
+  overlay_filter: 0.22
   actions:
     - label: "Book an Appointment"
       label_bg: "Резервирай час"
@@ -19,3 +20,114 @@ sidebar_en:
 sidebar_bg:
   nav: main-bg
 ---
+
+{% if site.active_lang == 'bg' %}
+<section class="home-intro" aria-labelledby="home-intro-title-bg">
+  <div class="home-intro__content">
+    <p class="home-intro__eyebrow">Бутиково студио за естествена коса</p>
+    <h2 id="home-intro-title-bg">Персонално подбрани екстеншъни, цвят и грижа в София.</h2>
+    <p>В Art Forum Hair комбинираме премиум естествена коса, професионално поставяне и индивидуална консултация, за да изглежда всяка трансформация естествена, удобна и уверена.</p>
+  </div>
+  <div class="home-intro__stats" aria-label="Предимства на студиото">
+    <div class="home-stat"><strong>100%</strong><span>естествена коса</span></div>
+    <div class="home-stat"><strong>1:1</strong><span>консултация и подбор</span></div>
+    <div class="home-stat"><strong>София</strong><span>ул. Златовръх 23</span></div>
+  </div>
+</section>
+
+<section class="home-services" aria-labelledby="home-services-title-bg">
+  <div class="home-section__header">
+    <p class="home-section__eyebrow">Услуги</p>
+    <h2 id="home-services-title-bg">Всичко необходимо за дълга, плътна и здрава коса.</h2>
+  </div>
+  <div class="home-services__grid">
+    <a class="home-service-card" href="{{ '/hair-extensions/' | relative_url }}">
+      <span class="home-service-card__icon" aria-hidden="true">✦</span>
+      <h3>Екстеншъни за коса</h3>
+      <p>Естествен обем и дължина с прецизно съчетаване на цвят и текстура.</p>
+    </a>
+    <a class="home-service-card" href="{{ '/tape-in-extensions/' | relative_url }}">
+      <span class="home-service-card__icon" aria-hidden="true">⌁</span>
+      <h3>Екстеншъни с лепенки</h3>
+      <p>Лека и щадяща технология за комфортно ежедневие и бърза промяна.</p>
+    </a>
+    <a class="home-service-card" href="{{ '/our-products/' | relative_url }}">
+      <span class="home-service-card__icon" aria-hidden="true">◆</span>
+      <h3>Професионална грижа</h3>
+      <p>Подбрани продукти и съвети за поддръжка на красив резултат у дома.</p>
+    </a>
+  </div>
+</section>
+
+<section class="home-journal-intro" aria-labelledby="home-journal-title-bg">
+  <p class="home-section__eyebrow">Съвети от студиото</p>
+  <h2 id="home-journal-title-bg">Последни статии за екстеншъни и грижа за косата</h2>
+  <p>Научете как да изберете подходящ метод, как да поддържате естествената коса и кои тенденции си заслужават вниманието.</p>
+</section>
+
+<section class="home-cta" aria-labelledby="home-cta-title-bg">
+  <div>
+    <h2 id="home-cta-title-bg">Готови ли сте за нова визия?</h2>
+    <p>Свържете се със студиото за консултация и персонална препоръка.</p>
+  </div>
+  <div class="home-cta__actions">
+    <a class="btn btn--primary" href="tel:+359885501340">Обади се</a>
+    <a class="btn btn--primary" href="mailto:artforumhair@gmail.com">Изпрати имейл</a>
+  </div>
+</section>
+{% else %}
+<section class="home-intro" aria-labelledby="home-intro-title-en">
+  <div class="home-intro__content">
+    <p class="home-intro__eyebrow">Boutique natural hair studio</p>
+    <h2 id="home-intro-title-en">Personalized extensions, color matching, and aftercare in Sofia.</h2>
+    <p>At Art Forum Hair we combine premium natural hair, expert application, and one-to-one consultation so every transformation looks soft, comfortable, and confidence-building.</p>
+  </div>
+  <div class="home-intro__stats" aria-label="Studio highlights">
+    <div class="home-stat"><strong>100%</strong><span>natural human hair</span></div>
+    <div class="home-stat"><strong>1:1</strong><span>consultation and match</span></div>
+    <div class="home-stat"><strong>Sofia</strong><span>Zlatovrah 23 Street</span></div>
+  </div>
+</section>
+
+<section class="home-services" aria-labelledby="home-services-title-en">
+  <div class="home-section__header">
+    <p class="home-section__eyebrow">Services</p>
+    <h2 id="home-services-title-en">Everything you need for longer, fuller, healthier-looking hair.</h2>
+  </div>
+  <div class="home-services__grid">
+    <a class="home-service-card" href="{{ '/hair-extensions/' | relative_url }}">
+      <span class="home-service-card__icon" aria-hidden="true">✦</span>
+      <h3>Hair extensions</h3>
+      <p>Natural-looking volume and length with precise color and texture matching.</p>
+    </a>
+    <a class="home-service-card" href="{{ '/tape-in-extensions/' | relative_url }}">
+      <span class="home-service-card__icon" aria-hidden="true">⌁</span>
+      <h3>Tape-in extensions</h3>
+      <p>A lightweight, gentle technology for comfortable wear and fast change.</p>
+    </a>
+    <a class="home-service-card" href="{{ '/our-products/' | relative_url }}">
+      <span class="home-service-card__icon" aria-hidden="true">◆</span>
+      <h3>Professional aftercare</h3>
+      <p>Care products and maintenance advice to keep your result beautiful at home.</p>
+    </a>
+  </div>
+</section>
+
+<section class="home-journal-intro" aria-labelledby="home-journal-title-en">
+  <p class="home-section__eyebrow">Salon advice</p>
+  <h2 id="home-journal-title-en">Latest articles about extensions and hair care</h2>
+  <p>Learn how to choose the right method, maintain natural hair, and spot trends worth trying.</p>
+</section>
+
+<section class="home-cta" aria-labelledby="home-cta-title-en">
+  <div>
+    <h2 id="home-cta-title-en">Ready for a new look?</h2>
+    <p>Contact the studio for a consultation and a personalized recommendation.</p>
+  </div>
+  <div class="home-cta__actions">
+    <a class="btn btn--primary" href="tel:+359885501340">Call us</a>
+    <a class="btn btn--primary" href="mailto:artforumhair@gmail.com">Email us</a>
+  </div>
+</section>
+{% endif %}
+
