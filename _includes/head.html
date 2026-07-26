@@ -9,8 +9,16 @@
 
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#4a2c2a">
 <link rel="manifest" href="{{ '/manifest.json' | relative_url }}">
+
+{% if page.header.overlay_image == "/assets/images/GPA9099.jpg" %}
+<link rel="preload" as="image" href="{{ '/assets/images/GPA9099.webp' | relative_url }}" type="image/webp" fetchpriority="high">
+{% elsif page.header.overlay_image %}
+<link rel="preload" as="image" href="{{ page.header.overlay_image | relative_url }}" fetchpriority="high">
+{% elsif page.header.image %}
+<link rel="preload" as="image" href="{{ page.header.image | relative_url }}" fetchpriority="high">
+{% endif %}
 
 <!-- Preconnect to external domains for faster loading -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>

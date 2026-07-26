@@ -11,7 +11,7 @@ tags:
   - Natural Hair
   - Hair Care
 header:
-  teaser: /assets/images/hair_image.jpeg
+  teaser: /assets/images/artforum-teaser.webp
 sidebar:
   nav: main
 ---

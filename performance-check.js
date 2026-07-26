@@ -17,7 +17,9 @@ const criticalFiles = [
   'manifest.json',
   '_headers',
   '_includes/structured-data.html',
-  'assets/css/custom.css'
+  '_sass/minimal-mistakes/_artforum.scss',
+  'assets/images/GPA9099.webp',
+  'assets/images/artforum-teaser.webp'
 ];
 
 console.log('📁 Checking critical files...');
@@ -40,11 +42,13 @@ if (fs.existsSync(configPath)) {
   const config = fs.readFileSync(configPath, 'utf8');
 
   const checks = [
-    { name: 'Search enabled', pattern: /search\s*:\s*true/i },
+    { name: 'Client-side search disabled for leaner pages', pattern: /search\s*:\s*false/i },
     { name: 'Breadcrumbs enabled', pattern: /breadcrumbs\s*:\s*true/i },
     { name: 'Site description set', pattern: /description\s*:\s*"[^"]{50,}"/i },
     { name: 'URL configured', pattern: /url\s*:\s*"https?:\/\//i },
-    { name: 'OG image set', pattern: /og_image\s*:\s*"\/[^"]+"/i },
+    { name: 'OG image uses real salon photo', pattern: /og_image\s*:\s*"\/assets\/images\/GPA9099\.jpg"/i },
+    { name: 'Optimized teaser configured', pattern: /teaser\s*:\s*"\/assets\/images\/artforum-teaser\.webp"/i },
+    { name: 'Sass compression enabled', pattern: /style\s*:\s*compressed/i },
     { name: 'HTML compression enabled', pattern: /compress_html:/i }
   ];
 
@@ -75,8 +79,9 @@ if (fs.existsSync(imagesDir)) {
       const stat = fs.statSync(filePath);
 
       if (stat.isDirectory()) {
+        if (file === 'gallery_BACK') return;
         checkImages(filePath);
-      } else if (/\.(jpg|jpeg|png|gif)$/i.test(file)) {
+      } else if (/\.(jpg|jpeg|png|gif|webp)$/i.test(file)) {
         imageCount++;
         totalSize += stat.size;
 
@@ -95,7 +100,7 @@ if (fs.existsSync(imagesDir)) {
 
   console.log(`  Total images: ${imageCount}`);
   console.log(`  Total size: ${Math.round(totalSize / 1024 / 1024 * 100) / 100} MB`);
-  console.log(`  Average size: ${Math.round(totalSize / imageCount / 1024)} KB`);
+  console.log(`  Average size: ${imageCount > 0 ? Math.round(totalSize / imageCount / 1024) : 0} KB`);
 
   if (largeImages.length > 0) {
     console.log(`\n  ⚠️  Large images detected (>500KB):`);
@@ -117,21 +122,38 @@ console.log('📝 Checking blog posts...');
 const postsDir = path.join(__dirname, '_posts');
 
 if (fs.existsSync(postsDir)) {
-  const posts = fs.readdirSync(postsDir).filter(f => f.endsWith('.md'));
+  function collectPosts(dir) {
+    return fs.readdirSync(dir).flatMap(file => {
+      const filePath = path.join(dir, file);
+      const stat = fs.statSync(filePath);
+
+      if (stat.isDirectory()) {
+        return collectPosts(filePath);
+      }
+
+      return file.endsWith('.md') ? [filePath] : [];
+    });
+  }
+
+  const posts = collectPosts(postsDir);
   console.log(`  Total posts: ${posts.length}`);
 
   let postsWithoutExcerpt = 0;
   posts.forEach(post => {
-    const content = fs.readFileSync(path.join(postsDir, post), 'utf8');
-    if (!/excerpt\s*:/i.test(content)) {
+    const content = fs.readFileSync(post, 'utf8');
+    const hasExplicitExcerpt = /\nexcerpt\s*:/i.test(content);
+    const body = content.replace(/^---[\s\S]*?---\s*/, '').trim();
+    const hasGeneratedExcerpt = body.split(/\n\s*\n/).some(block => block.replace(/<[^>]*>/g, '').trim().length > 50);
+
+    if (!hasExplicitExcerpt && !hasGeneratedExcerpt) {
       postsWithoutExcerpt++;
     }
   });
 
   if (postsWithoutExcerpt > 0) {
-    console.log(`  ⚠️  ${postsWithoutExcerpt} posts missing excerpt (recommended for SEO)`);
+    console.log(`  ⚠️  ${postsWithoutExcerpt} posts missing explicit or generated excerpt content`);
   } else {
-    console.log(`  ✓ All posts have excerpts`);
+    console.log(`  ✓ All posts have explicit or generated excerpts`);
   }
 } else {
   console.log('  ⚠️  Posts directory not found');
