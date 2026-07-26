@@ -38,5 +38,8 @@
     "build": "bundle exec jekyll build",
     "clean": "bundle exec jekyll clean",
     "check": "node performance-check.js"
+  },
+  "dependencies": {
+    "shell-quote": "^1.10.0"
   }
 }
