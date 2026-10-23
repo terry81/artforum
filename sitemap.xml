@@ -1,0 +1,65 @@
+---
+layout: null
+permalink: /sitemap.xml
+sitemap: false
+---
+{%- comment -%}
+  Multilingual sitemap.
+
+  jekyll-sitemap is unaware of jekyll-polyglot's per-language build passes, so it
+  only ever lists default-language URLs. Polyglot also copies every document into
+  both language trees, so each document is listed here exactly once, at the URL
+  matching its own `lang` — which is the same URL _includes/seo.html declares as
+  canonical. Pages (real translations sharing a permalink) also get xhtml:link
+  alternates; articles are language-specific originals and therefore do not.
+{%- endcomment -%}
+{%- assign root = site.url | append: site.baseurl_root -%}
+{%- assign default_lang = site.default_lang | default: 'bg' -%}
+{%- assign docs = site.posts | concat: site.pages -%}
+{%- assign seen = "" | split: "," -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- for doc in docs -%}
+  {%- if doc.sitemap == false -%}{%- continue -%}{%- endif -%}
+  {%- assign url = doc.url | replace: "index.html", "" -%}
+  {%- unless url contains "." or url contains "/page" -%}
+  {%- comment -%}
+    Pages exist in every language under the same permalink, so list one URL per
+    language. Articles are language-specific originals, so list only the URL
+    matching the article's own `lang`.
+  {%- endcomment -%}
+  {%- if doc.collection == 'posts' -%}
+    {%- assign doc_lang = doc.lang | default: default_lang -%}
+    {%- assign langs = doc_lang | split: ',' -%}
+  {%- else -%}
+    {%- assign langs = site.languages -%}
+  {%- endif -%}
+  {%- for lang in langs -%}
+  {%- if lang == default_lang -%}{%- assign prefix = '' -%}{%- else -%}{%- assign prefix = '/' | append: lang -%}{%- endif -%}
+  {%- assign loc = root | append: prefix | append: url -%}
+  {%- unless seen contains loc -%}
+  {%- assign seen = seen | push: loc -%}
+  <url>
+    <loc>{{ loc | xml_escape }}</loc>
+    {%- if doc.last_modified_at or doc.date %}
+    <lastmod>{{ doc.last_modified_at | default: doc.date | date_to_xmlschema }}</lastmod>
+    {%- endif %}
+    {%- if doc.collection != 'posts' %}
+      {%- for alt in site.languages %}
+        {%- if alt == default_lang %}
+    <xhtml:link rel="alternate" hreflang="{{ alt }}" href="{{ root }}{{ url | xml_escape }}" />
+        {%- else %}
+    <xhtml:link rel="alternate" hreflang="{{ alt }}" href="{{ root }}/{{ alt }}{{ url | xml_escape }}" />
+        {%- endif %}
+      {%- endfor %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ root }}{{ url | xml_escape }}" />
+    {%- endif %}
+    <changefreq>{% if url == '/' %}weekly{% else %}monthly{% endif %}</changefreq>
+    <priority>{% if url == '/' %}1.0{% elsif doc.collection == 'posts' %}0.6{% else %}0.8{% endif %}</priority>
+  </url>
+  {%- endunless -%}
+  {%- endfor -%}
+  {%- endunless -%}
+{%- endfor %}
+</urlset>
+

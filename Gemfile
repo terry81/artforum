@@ -16,3 +16,7 @@ gem "jekyll-polyglot", "~> 1.8"
 
 # Required for Jekyll 4.x
 gem "webrick"
+
+# Security: CVE-2026-54696 (heap buffer overflow in JSON generator IO streaming)
+gem "json", ">= 2.19.9"
+

@@ -18,19 +18,15 @@
 
 <figure class="{{ gallery_layout }} {{ include.class }}">
   {% for img in gallery %}
+    {%- assign thumb = img.image_path -%}
+    {%- assign thumb_webp = thumb | replace: '.jpeg', '.webp' | replace: '.jpg', '.webp' | replace: '.JPG', '.webp' -%}
+    {%- assign full_webp = img.url | replace: '.jpeg', '.webp' | replace: '.jpg', '.webp' | replace: '.JPG', '.webp' -%}
+    {%- capture img_alt -%}{% if img.alt %}{{ img.alt | escape_once }}{% else %}{{ page.title | strip_html | escape_once }} — {{ forloop.index }}{% endif %}{%- endcapture -%}
+    {%- capture picture -%}<picture><source srcset="{{ thumb_webp | relative_url }}" type="image/webp"><img src="{{ thumb | relative_url }}" alt="{{ img_alt }}" width="{{ img.width | default: 225 }}" height="{{ img.height | default: 300 }}" loading="lazy" decoding="async"></picture>{%- endcapture -%}
     {% if img.url %}
-      <a href="{{ img.url | relative_url }}"
-        {% if img.title %}title="{{ img.title }}"{% endif %}>
-          <img src="{{ img.image_path | relative_url }}"
-               alt="{% if img.alt %}{{ img.alt | escape_once }}{% endif %}"
-               loading="lazy"
-               decoding="async">
-      </a>
+      <a href="{{ full_webp | relative_url }}" class="image-popup"{% if img.title %} title="{{ img.title | escape_once }}"{% endif %}>{{ picture }}</a>
     {% else %}
-      <img src="{{ img.image_path | relative_url }}"
-           alt="{% if img.alt %}{{ img.alt | escape_once }}{% endif %}"
-           loading="lazy"
-           decoding="async">
+      {{ picture }}
     {% endif %}
   {% endfor %}
   {% if include.caption %}

@@ -1,6 +1,8 @@
 {% capture overlay_img_path %}{{ page.header.overlay_image | relative_url }}{% endcapture %}
 {% if page.header.overlay_image == "/assets/images/GPA9099.jpg" %}
   {% assign overlay_img_webp_path = "/assets/images/GPA9099.webp" | relative_url %}
+  {% assign overlay_img_webp_sm = "/assets/images/GPA9099-800.webp" | relative_url %}
+  {% assign overlay_img_webp_md = "/assets/images/GPA9099-1200.webp" | relative_url %}
 {% endif %}
 
 {% if page.header.overlay_filter contains "gradient" %}
@@ -31,6 +33,21 @@
   {% endif %}
 {% endcapture %}
 
+{% if overlay_img_webp_sm %}
+<style>
+  @media (max-width: 800px) {
+    .page__hero--overlay {
+      background-image: {% if overlay_filter %}{{ overlay_filter }}, {% endif %}url('{{ overlay_img_webp_sm }}') !important;
+    }
+  }
+  @media (min-width: 801px) and (max-width: 1200px) {
+    .page__hero--overlay {
+      background-image: {% if overlay_filter %}{{ overlay_filter }}, {% endif %}url('{{ overlay_img_webp_md }}') !important;
+    }
+  }
+</style>
+{% endif %}
+
 <div class="page__hero{% if page.header.overlay_color or page.header.overlay_image %}--overlay{% endif %}"
   style="{{ hero_style | strip_newlines | replace: '  ', ' ' | strip }}"
 >
@@ -38,7 +55,7 @@
     <div class="wrapper">
       <h1 id="page-title" class="page__title" itemprop="headline">
         {% if paginator and site.paginate_show_page_num %}
-          {{ site.title }}{% unless paginator.page == 1 %} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}
+          {{ site.title }}{% unless paginator.page == 1 %} {{ site.data.ui-text[site.active_lang].page | default: "Page" }} {{ paginator.page }}{% endunless %}
         {% else %}
           {% if site.active_lang and page.title_translation[site.active_lang] %}
             {{ page.title_translation[site.active_lang] | markdownify | remove: "<p>" | remove: "</p>" }}
@@ -58,7 +75,7 @@
       {% endif %}
       {% include page__meta.html %}
       {% if page.header.cta_url %}
-        <p><a href="{{ page.header.cta_url | relative_url }}" class="btn btn--light-outline btn--large">{{ page.header.cta_label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a></p>
+        <p><a href="{{ page.header.cta_url | relative_url }}" class="btn btn--light-outline btn--large">{{ page.header.cta_label | default: site.data.ui-text[site.active_lang].more_label | default: "Learn More" }}</a></p>
       {% endif %}
       {% if page.header.actions %}
         <p>
@@ -66,7 +83,7 @@
           {% if site.active_lang == 'bg' and action.label_bg %}
             <a href="{{ action.url | relative_url }}" class="btn btn--light-outline btn--large">{{ action.label_bg }}</a>
           {% else %}
-            <a href="{{ action.url | relative_url }}" class="btn btn--light-outline btn--large">{{ action.label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a>
+            <a href="{{ action.url | relative_url }}" class="btn btn--light-outline btn--large">{{ action.label | default: site.data.ui-text[site.active_lang].more_label | default: "Learn More" }}</a>
           {% endif %}
         {% endfor %}
       {% endif %}

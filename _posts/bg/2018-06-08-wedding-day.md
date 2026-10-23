@@ -21,4 +21,4 @@ sidebar:
 
 С помощта на екстеншъните можете да имате перфектната прическа на Вашия най-специален ден!
 
-![](../assets/images/zGPA8959-1024x682.jpg)
+<img src="/assets/images/zGPA8959-1024x682.jpg" alt="Булчинска прическа с екстеншъни от Art Forum Hair" width="1024" height="682" loading="lazy" decoding="async">

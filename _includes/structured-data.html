@@ -1,77 +1,122 @@
-{% comment %}
-<!-- Structured Data (JSON-LD) for Organization -->
-{% endcomment %}
+{%- comment -%}
+  Site-wide JSON-LD. All interpolated values go through `jsonify` so quotes or
+  newlines in titles/excerpts can never break the JSON payload.
+{%- endcomment -%}
+{%- assign afh_id = site.url | append: "/#salon" -%}
+{%- assign afh_logo = site.url | append: site.logo -%}
+{%- assign afh_image = site.url | append: site.og_image -%}
+{%- if site.active_lang == 'bg' -%}
+  {%- assign afh_lang = "bg-BG" -%}
+  {%- assign afh_street = "ул. Златовръх 23" -%}
+  {%- assign afh_city = "София" -%}
+{%- else -%}
+  {%- assign afh_lang = "en-US" -%}
+  {%- assign afh_street = "Zlatovrah 23 Street" -%}
+  {%- assign afh_city = "Sofia" -%}
+{%- endif -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HairSalon",
-  "name": "Art Forum Hair",
-  "description": "Premium hair extensions salon in Sofia, Bulgaria. Expert hairstylists offering natural human hair extensions, flixy extensions, tape-in extensions, and professional hair care services.",
-  "url": "{{ site.url }}",
-  "logo": "{{ site.url }}{{ site.logo }}",
-  "image": "{{ site.url }}{{ site.og_image }}",
-  "telephone": "+359885501340",
-  "email": "artforumhair@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Zlatovrah 23 Street",
-    "addressLocality": "Sofia",
-    "addressCountry": "BG"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "42.6977",
-    "longitude": "23.3219"
-  },
-  "priceRange": "$$",
-  "openingHoursSpecification": [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
+      "@type": "HairSalon",
+      "@id": {{ afh_id | jsonify }},
+      "name": {{ site.name | default: site.title | jsonify }},
+      "description": {{ site.description | jsonify }},
+      "url": {{ site.url | jsonify }},
+      "logo": {{ afh_logo | jsonify }},
+      "image": [{{ afh_image | jsonify }}],
+      "telephone": "+359885501340",
+      "email": "artforumhair@gmail.com",
+      "currenciesAccepted": "BGN, EUR",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": {{ afh_street | jsonify }},
+        "addressLocality": {{ afh_city | jsonify }},
+        "addressRegion": "Sofia-City",
+        "addressCountry": "BG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.6977,
+        "longitude": 23.3219
+      },
+      "hasMap": "https://maps.google.com/?q=Zlatovrah+23+Street,+Sofia,+Bulgaria",
+      "areaServed": { "@type": "City", "name": {{ afh_city | jsonify }} },
+      "knowsLanguage": ["bg", "en"],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
       ],
-      "opens": "09:00",
-      "closes": "19:00"
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hair extensions", "serviceType": "Hair extensions" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tape-in hair extensions", "serviceType": "Tape-in hair extensions" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Professional hair care", "serviceType": "Hair care and treatment" } }
+      ],
+      "founder": { "@type": "Person", "name": {{ site.author.name | jsonify }} }
+    },
+    {
+      "@type": "WebSite",
+      "@id": {{ site.url | append: "/#website" | jsonify }},
+      "url": {{ site.url | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "inLanguage": {{ afh_lang | jsonify }},
+      "publisher": { "@id": {{ afh_id | jsonify }} }
     }
-  ],
-  "sameAs": []
+  ]
 }
 </script>
 
-{% if page.layout == "single" and page.date %}
-{% comment %}
-<!-- Structured Data for Blog Post -->
-{% endcomment %}
+{%- comment -%}Breadcrumb trail for rich results.{%- endcomment -%}
+{% if site.breadcrumbs and page.url != "/" and page.title %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "{{ page.title }}",
-  "description": "{{ seo_description }}",
-  "image": "{% if page_large_image %}{{ page_large_image }}{% else %}{{ site.url }}{{ site.og_image }}{% endif %}",
-  "datePublished": "{{ page.date | date_to_xmlschema }}",
-  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
-  "author": {
-    "@type": "Person",
-    "name": "{{ author.name | default: site.author.name }}"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "{{ site.title }}",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ site.url }}{{ site.logo }}"
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": {{ site.data.ui-text[site.active_lang].breadcrumb_home_label | default: "Home" | jsonify }},
+      "item": {{ '/' | absolute_url | jsonify }}
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ page.title | strip_html | jsonify }},
+      "item": {{ canonical_url | jsonify }}
     }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "{{ canonical_url }}"
-  }
+  ]
 }
 </script>
 {% endif %}
 
+{% if page.layout == "single" and page.date %}
+{%- assign post_image = page_large_image | default: afh_image -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | strip_html | truncate: 110 | jsonify }},
+  "description": {{ seo_description | strip_html | jsonify }},
+  "image": [{{ post_image | jsonify }}],
+  "inLanguage": {{ afh_lang | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ author.name | default: site.author.name | jsonify }}
+  },
+  "publisher": { "@id": {{ afh_id | jsonify }} },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ canonical_url | jsonify }}
+  }
+}
+</script>
+{% endif %}

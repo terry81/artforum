@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
-Disallow: /assets/js/
-Disallow: /assets/css/
+
+# Search engines must be able to fetch CSS/JS to render and score pages,
+# so /assets/css/ and /assets/js/ are intentionally crawlable.
+Disallow: /assets/images/gallery_BACK/
 
 Sitemap: https://artforumhair.com/sitemap.xml
-

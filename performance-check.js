@@ -138,12 +138,40 @@ if (fs.existsSync(postsDir)) {
   const posts = collectPosts(postsDir);
   console.log(`  Total posts: ${posts.length}`);
 
+  /**
+   * Strip HTML tags from a string.
+   *
+   * A single-pass regex such as `s.replace(/<[^>]*>/g, '')` is incomplete:
+   * removing the inner match of a nested construct like `<<a>script>` *creates*
+   * a new `<script>` tag out of the surrounding characters. Scanning character
+   * by character cannot reintroduce a tag, because the result never contains
+   * a `<` at all.
+   */
+  function stripTags(input) {
+    let out = '';
+    let inTag = false;
+
+    for (const ch of input) {
+      if (inTag) {
+        if (ch === '>') inTag = false;
+      } else if (ch === '<') {
+        inTag = true;
+      } else {
+        out += ch;
+      }
+    }
+
+    return out;
+  }
+
   let postsWithoutExcerpt = 0;
   posts.forEach(post => {
     const content = fs.readFileSync(post, 'utf8');
     const hasExplicitExcerpt = /\nexcerpt\s*:/i.test(content);
     const body = content.replace(/^---[\s\S]*?---\s*/, '').trim();
-    const hasGeneratedExcerpt = body.split(/\n\s*\n/).some(block => block.replace(/<[^>]*>/g, '').trim().length > 50);
+    const hasGeneratedExcerpt = body
+      .split(/\n\s*\n/)
+      .some(block => stripTags(block).trim().length > 50);
 
     if (!hasExplicitExcerpt && !hasGeneratedExcerpt) {
       postsWithoutExcerpt++;
