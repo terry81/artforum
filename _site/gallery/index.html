@@ -11,8 +11,7 @@
 
 <!-- begin _includes/seo.html --><title>Галерия - Art Forum Hair</title>
 <meta name="description" content="Art Forum Hair - Premium hair extensions salon in Sofia, Bulgaria. Expert hairstylists offering natural human hair extensions, flixy extensions, tape-in extensions, and professional hair care services.">
-
-
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="author" content="Albena Atanasova">
   
 
@@ -30,8 +29,16 @@
 
 
 
-  <meta property="og:image" content="https://artforumhair.com/assets/images/hair_image.jpeg">
+  <meta property="og:image" content="https://artforumhair.com/assets/images/GPA9099.jpg">
+  <meta property="og:image:alt" content="Галерия">
 
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://artforumhair.com/assets/images/GPA9099.jpg">
+
+<meta name="twitter:title" content="Галерия">
+<meta name="twitter:description" content="Art Forum Hair - Premium hair extensions salon in Sofia, Bulgaria. Expert hairstylists offering natural human hair extensions, flixy extensions, tape-in extensions, and professional hair care services.">
 
 
 
@@ -43,31 +50,23 @@
   
 
   
-
-
 <link rel="canonical" href="https://artforumhair.com/gallery/">
 
 
   
-    <link rel="alternate" hreflang="bg" href="https://artforumhair.com/bg/gallery/" />
-  
-    <link rel="alternate" hreflang="en" href="https://artforumhair.com/en/gallery/" />
-  
-
-
-
-
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
     
-      "@type": "Person",
-      "name": "Art Forum Hair",
-      "url": "https://artforumhair.com/"
+      <link rel="alternate" hreflang="bg" href="https://artforumhair.com/gallery/">
     
-  }
-</script>
+  
+    
+      <link rel="alternate" hreflang="en" href="https://artforumhair.com/en/gallery/">
+    
+  
+  
+    <link rel="alternate" hreflang="x-default" href="https://artforumhair.com/gallery/">
+  
+
+
 
 
 
@@ -77,45 +76,81 @@
 
 <!-- end _includes/seo.html -->
 
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HairSalon",
-  "name": "Art Forum Hair",
-  "description": "Premium hair extensions salon in Sofia, Bulgaria. Expert hairstylists offering natural human hair extensions, flixy extensions, tape-in extensions, and professional hair care services.",
-  "url": "https://artforumhair.com",
-  "logo": "https://artforumhair.com/assets/images/artforum_logo.jpeg",
-  "image": "https://artforumhair.com/assets/images/hair_image.jpeg",
-  "telephone": "+359885501340",
-  "email": "artforumhair@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Zlatovrah 23 Street",
-    "addressLocality": "Sofia",
-    "addressCountry": "BG"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "42.6977",
-    "longitude": "23.3219"
-  },
-  "priceRange": "$$",
-  "openingHoursSpecification": [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
+      "@type": "HairSalon",
+      "@id": "https://artforumhair.com/#salon",
+      "name": "Art Forum Hair",
+      "description": "Art Forum Hair - Premium hair extensions salon in Sofia, Bulgaria. Expert hairstylists offering natural human hair extensions, flixy extensions, tape-in extensions, and professional hair care services.",
+      "url": "https://artforumhair.com",
+      "logo": "https://artforumhair.com/assets/images/artforum_logo.jpeg",
+      "image": ["https://artforumhair.com/assets/images/GPA9099.jpg"],
+      "telephone": "+359885501340",
+      "email": "artforumhair@gmail.com",
+      "currenciesAccepted": "BGN, EUR",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Златовръх 23",
+        "addressLocality": "София",
+        "addressRegion": "Sofia-City",
+        "addressCountry": "BG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.6977,
+        "longitude": 23.3219
+      },
+      "hasMap": "https://maps.google.com/?q=Zlatovrah+23+Street,+Sofia,+Bulgaria",
+      "areaServed": { "@type": "City", "name": "София" },
+      "knowsLanguage": ["bg", "en"],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
       ],
-      "opens": "09:00",
-      "closes": "19:00"
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hair extensions", "serviceType": "Hair extensions" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tape-in hair extensions", "serviceType": "Tape-in hair extensions" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Professional hair care", "serviceType": "Hair care and treatment" } }
+      ],
+      "founder": { "@type": "Person", "name": "Albena Atanasova" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://artforumhair.com/#website",
+      "url": "https://artforumhair.com",
+      "name": "Art Forum Hair",
+      "inLanguage": "bg-BG",
+      "publisher": { "@id": "https://artforumhair.com/#salon" }
     }
-  ],
-  "sameAs": []
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Начало",
+      "item": "https://artforumhair.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Галерия",
+      "item": "https://artforumhair.com/gallery/"
+    }
+  ]
 }
 </script>
 
@@ -129,12 +164,11 @@
 
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#4a2c2a">
+<meta name="format-detection" content="telephone=no">
 <link rel="manifest" href="/manifest.json">
 
-<!-- Preconnect to external domains for faster loading -->
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
 
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
@@ -142,17 +176,17 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
 
 
 
     <!-- start custom head snippets -->
 
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- Custom CSS for fashion redesign -->
-<link rel="stylesheet" href="/assets/css/custom.css">
+<!-- Favicons / app icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="Art Forum Hair">
+<meta name="application-name" content="Art Forum Hair">
 
 <!-- end custom head snippets -->
 
@@ -185,7 +219,7 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-          <a class="site-logo" href="/"><img src="/assets/images/artforum_logo.jpeg" alt="Art Forum Hair"></a>
+          <a class="site-logo" href="/"><img src="/assets/images/artforum_logo.jpeg" alt="Art Forum Hair" width="177" height="120" decoding="async"></a>
         
         <a class="site-title" href="/">
           Art Forum Hair
@@ -385,562 +419,283 @@
         
 <figure class="third ">
   
+      <a href="/assets/images/gallery/1.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/1.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/1.jpg" alt="Галерия — 1" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/1.jpg">
-          <img src="/assets/images/gallery/thumb/1.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/2.jpg">
-          <img src="/assets/images/gallery/thumb/2.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/2.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/2.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/2.jpg" alt="Галерия — 2" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/3.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/3.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/3.jpg" alt="Галерия — 3" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/3.jpg">
-          <img src="/assets/images/gallery/thumb/3.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/4.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/4.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/4.jpg" alt="Галерия — 4" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/4.jpg">
-          <img src="/assets/images/gallery/thumb/4.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/3.jpg">
-          <img src="/assets/images/gallery/thumb/3.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/3.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/3.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/3.jpg" alt="Галерия — 5" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/4.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/4.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/4.jpg" alt="Галерия — 6" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/4.jpg">
-          <img src="/assets/images/gallery/thumb/4.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/5.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/5.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/5.jpg" alt="Галерия — 7" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/5.jpg">
-          <img src="/assets/images/gallery/thumb/5.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA8972.jpg">
-          <img src="/assets/images/gallery/thumb/GPA8972.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA8972.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA8972.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA8972.jpg" alt="Галерия — 8" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA8975.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA8975.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA8975.jpg" alt="Галерия — 9" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA8975.jpg">
-          <img src="/assets/images/gallery/thumb/GPA8975.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA8976.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA8976.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA8976.jpg" alt="Галерия — 10" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA8976.jpg">
-          <img src="/assets/images/gallery/thumb/GPA8976.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA8986.jpg">
-          <img src="/assets/images/gallery/thumb/GPA8986.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA8986.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA8986.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA8986.jpg" alt="Галерия — 11" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA8998.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA8998.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA8998.jpg" alt="Галерия — 12" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA8998.jpg">
-          <img src="/assets/images/gallery/thumb/GPA8998.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9004.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9004.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9004.jpg" alt="Галерия — 13" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9004.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9004.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9029.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9029.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9029.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9029.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9029.jpg" alt="Галерия — 14" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9034.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9034.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9034.jpg" alt="Галерия — 15" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9034.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9034.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9046.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9046.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9046.jpg" alt="Галерия — 16" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9046.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9046.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9050.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9050.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9050.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9050.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9050.jpg" alt="Галерия — 17" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9058.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9058.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9058.jpg" alt="Галерия — 18" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9058.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9058.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9061.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9061.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9061.jpg" alt="Галерия — 19" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9061.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9061.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9063.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9063.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9063.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9063.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9063.jpg" alt="Галерия — 20" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9066.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9066.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9066.jpg" alt="Галерия — 21" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9066.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9066.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9077.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9077.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9077.jpg" alt="Галерия — 22" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9077.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9077.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9079.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9079.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9079.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9079.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9079.jpg" alt="Галерия — 23" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9081.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9081.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9081.jpg" alt="Галерия — 24" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9081.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9081.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9083.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9083.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9083.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9083.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9083.jpg" alt="Галерия — 25" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9086.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9086.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9086.jpg" alt="Галерия — 26" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9086.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9086.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9089.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9089.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9089.jpg" alt="Галерия — 27" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9089.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9089.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9092.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9092.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9092.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9092.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9092.jpg" alt="Галерия — 28" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9093.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9093.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9093.jpg" alt="Галерия — 29" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9093.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9093.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9095.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9095.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9095.jpg" alt="Галерия — 30" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9095.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9095.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9096.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9096.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9096.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9096.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9096.jpg" alt="Галерия — 31" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9101.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9101.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9101.jpg" alt="Галерия — 32" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9101.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9101.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9102.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9102.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9102.jpg" alt="Галерия — 33" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9102.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9102.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9103.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9103.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9103.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9103.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9103.jpg" alt="Галерия — 34" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9107.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9107.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9107.jpg" alt="Галерия — 35" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9107.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9107.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9109.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9109.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9109.jpg" alt="Галерия — 36" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9109.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9109.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9116.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9116.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9116.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9116.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9116.jpg" alt="Галерия — 37" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9119.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9119.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9119.jpg" alt="Галерия — 38" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9119.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9119.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9122.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9122.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9122.jpg" alt="Галерия — 39" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9122.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9122.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9124.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9124.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9124.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9124.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9124.jpg" alt="Галерия — 40" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9131.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9131.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9131.jpg" alt="Галерия — 41" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9131.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9131.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9138.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9138.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9138.jpg" alt="Галерия — 42" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9138.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9138.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9142.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9142.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9142.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9142.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9142.jpg" alt="Галерия — 43" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9148.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9148.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9148.jpg" alt="Галерия — 44" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9148.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9148.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9154.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9154.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9154.jpg" alt="Галерия — 45" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9154.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9154.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9163.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9163.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9163.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9163.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9163.jpg" alt="Галерия — 46" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9176.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9176.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9176.jpg" alt="Галерия — 47" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9176.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9176.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9183.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9183.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9183.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9183.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9183.jpg" alt="Галерия — 48" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9184.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9184.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9184.jpg" alt="Галерия — 49" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9184.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9184.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9185.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9185.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9185.jpg" alt="Галерия — 50" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9185.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9185.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9186.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9186.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9186.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9186.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9186.jpg" alt="Галерия — 51" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9187.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9187.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9187.jpg" alt="Галерия — 52" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9187.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9187.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9188.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9188.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9188.jpg" alt="Галерия — 53" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9188.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9188.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9189.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9189.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9189.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9189.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9189.jpg" alt="Галерия — 54" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9190.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9190.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9190.jpg" alt="Галерия — 55" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9190.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9190.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9191.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9191.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9191.jpg" alt="Галерия — 56" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9191.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9191.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9192.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9192.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9192.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9192.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9192.jpg" alt="Галерия — 57" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9194.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9194.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9194.jpg" alt="Галерия — 58" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9194.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9194.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9197.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9197.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9197.jpg" alt="Галерия — 59" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9197.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9197.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9207.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9207.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9207.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9207.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9207.jpg" alt="Галерия — 60" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9209.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9209.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9209.jpg" alt="Галерия — 61" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9209.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9209.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9211.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9211.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9211.jpg" alt="Галерия — 62" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9211.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9211.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9216.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9216.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9216.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9216.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9216.jpg" alt="Галерия — 63" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9217.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9217.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9217.jpg" alt="Галерия — 64" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9217.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9217.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9230.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9230.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9230.jpg" alt="Галерия — 65" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9230.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9230.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9243.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9243.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9243.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9243.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9243.jpg" alt="Галерия — 66" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/GPA9265.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9265.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9265.jpg" alt="Галерия — 67" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9265.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9265.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/GPA9289.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9289.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9289.jpg" alt="Галерия — 68" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/GPA9289.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9289.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/GPA9333.jpg">
-          <img src="/assets/images/gallery/thumb/GPA9333.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/GPA9333.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/GPA9333.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/GPA9333.jpg" alt="Галерия — 69" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/bGPA8982.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA8982.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA8982.jpg" alt="Галерия — 70" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/bGPA8982.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA8982.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/bGPA8983.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA8983.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA8983.jpg" alt="Галерия — 71" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/bGPA8983.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA8983.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/bGPA9004.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA9004.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/bGPA9004.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA9004.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA9004.jpg" alt="Галерия — 72" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/bGPA9016.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA9016.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA9016.jpg" alt="Галерия — 73" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/bGPA9016.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA9016.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/bGPA9023.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA9023.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA9023.jpg" alt="Галерия — 74" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/bGPA9023.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA9023.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/bGPA9054.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA9054.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/bGPA9054.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA9054.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA9054.jpg" alt="Галерия — 75" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/bGPA9064.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA9064.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA9064.jpg" alt="Галерия — 76" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/bGPA9064.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA9064.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/bGPA9077.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA9077.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA9077.jpg" alt="Галерия — 77" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/bGPA9077.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA9077.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/bGPA9090.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA9090.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/bGPA9090.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA9090.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA9090.jpg" alt="Галерия — 78" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/bGPA9099.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA9099.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA9099.jpg" alt="Галерия — 79" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/bGPA9099.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA9099.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/bGPA9132.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA9132.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA9132.jpg" alt="Галерия — 80" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/bGPA9132.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA9132.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/bGPA9144.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA9144.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/bGPA9144.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA9144.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA9144.jpg" alt="Галерия — 81" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/bGPA9175.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA9175.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA9175.jpg" alt="Галерия — 82" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/bGPA9175.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA9175.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/bGPA9181.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA9181.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA9181.jpg" alt="Галерия — 83" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/bGPA9181.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA9181.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/bGPA9202.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA9202.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/bGPA9202.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA9202.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA9202.jpg" alt="Галерия — 84" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/bGPA9242.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA9242.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA9242.jpg" alt="Галерия — 85" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/bGPA9242.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA9242.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/bGPA9302.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA9302.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA9302.jpg" alt="Галерия — 86" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/bGPA9302.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA9302.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/bGPA9334.jpg">
-          <img src="/assets/images/gallery/thumb/bGPA9334.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/bGPA9334.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/bGPA9334.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/bGPA9334.jpg" alt="Галерия — 87" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/zGPA8959.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/zGPA8959.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/zGPA8959.jpg" alt="Галерия — 88" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/zGPA8959.jpg">
-          <img src="/assets/images/gallery/thumb/zGPA8959.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/image-1.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/image-1.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/image-1.jpg" alt="Галерия — 89" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/image-1.jpg">
-          <img src="/assets/images/gallery/thumb/image-1.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/image-11.jpg">
-          <img src="/assets/images/gallery/thumb/image-11.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/image-11.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/image-11.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/image-11.jpg" alt="Галерия — 90" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
+      <a href="/assets/images/gallery/image-16.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/image-16.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/image-16.jpg" alt="Галерия — 91" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/image-16.jpg">
-          <img src="/assets/images/gallery/thumb/image-16.jpg" alt="" />
-      </a>
-    
   
+      <a href="/assets/images/gallery/image-18.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/image-18.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/image-18.jpg" alt="Галерия — 92" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
-      <a href="/assets/images/gallery/image-18.jpg">
-          <img src="/assets/images/gallery/thumb/image-18.jpg" alt="" />
-      </a>
-    
   
-    
-      <a href="/assets/images/gallery/image20.jpg">
-          <img src="/assets/images/gallery/thumb/image20.jpg" alt="" />
-      </a>
+      <a href="/assets/images/gallery/image20.webp" class="image-popup"><picture><source srcset="/assets/images/gallery/thumb/image20.webp" type="image/webp" /><img src="/assets/images/gallery/thumb/image20.jpg" alt="Галерия — 93" width="225" height="300" loading="lazy" decoding="async" /></picture></a>
     
   
   
@@ -989,7 +744,7 @@
       
         <li>
           <a href="mailto:artforumhair@gmail.com" rel="nofollow noopener noreferrer">
-            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i>
+            <svg class="afh-icon" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400a48 48 0 0 1-48 48H48a48 48 0 0 1-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154 113.6 21.1 15.4 56.7 47.8 92.3 47.6 35.8.3 72.1-32.8 92.4-47.6 101.9-74.1 131.5-96.3 153.9-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19a48 48 0 0 0-48-48H48A48 48 0 0 0 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
             
               
                 Пишете ни
@@ -1000,7 +755,7 @@
       
         <li>
           <a href="tel:+359885501340" rel="nofollow noopener noreferrer">
-            <i class="fas fa-fw fa-phone-square" aria-hidden="true"></i>
+            <svg class="afh-icon" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M493.4 24.6 400.1 3.1a32 32 0 0 0-36.5 18.4l-43.1 100.6a32 32 0 0 0 9.2 37.4l45.5 37.2a329.3 329.3 0 0 1-157.5 157.5l-37.2-45.5a32 32 0 0 0-37.4-9.2L42.5 342.6A32 32 0 0 0 24 379.1l21.5 93.3A32 32 0 0 0 76.7 497C306.3 497 497 311.2 497 55.7a32 32 0 0 0-3.6-31.1z"/></svg>
             
               
                 Обадете се
@@ -1011,7 +766,7 @@
       
         <li>
           <a href="https://maps.google.com/?q=Zlatovrah+23+Street,+Sofia,+Bulgaria" rel="nofollow noopener noreferrer">
-            <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i>
+            <svg class="afh-icon" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M172.3 501.7C27 291 0 269.4 0 192a192 192 0 1 1 384 0c0 77.4-27 99-172.3 309.7a24 24 0 0 1-39.4 0zM192 272a80 80 0 1 0 0-160 80 80 0 0 0 0 160z"/></svg>
             
               
                 Локация
@@ -1034,7 +789,7 @@
     </div>
 
     
-  <script src="/assets/js/main.min.js"></script>
+  <script src="/assets/js/main.min.js" defer></script>
 
 
 
@@ -1042,10 +797,6 @@
 
 
 
-
-  
-    <script src="/assets/js/dropdown-menu.js"></script>
-  
 
 
 

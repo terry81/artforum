@@ -19,10 +19,30 @@
   {%- assign seo_title = seo_title | markdownify | strip_html | strip_newlines | escape_once -%}
 {%- endif -%}
 
+{%- comment -%}
+  Language-aware URLs.
+
+  Polyglot serves the default language from the site root (no /bg/ prefix) and
+  copies any document that has no same-slug translation into *every* language
+  tree. The Bulgarian and English articles here are separate pieces rather than
+  translations of each other, so each one is emitted twice (e.g. /my-post/ and
+  /en/my-post/). To avoid duplicate content we always canonicalise a document to
+  the URL that matches its own `lang`, no matter which tree it was rendered into.
+{%- endcomment -%}
+{%- assign seo_root = site.url | append: site.baseurl_root -%}
+{%- assign default_lang = site.default_lang | default: 'bg' -%}
+{%- assign doc_lang = page.lang | default: site.active_lang | default: default_lang -%}
+{%- if doc_lang != default_lang -%}
+  {%- assign lang_prefix = '/' | append: doc_lang -%}
+{%- else -%}
+  {%- assign lang_prefix = '' -%}
+{%- endif -%}
+{%- assign clean_url = page.url | replace: "index.html", "" -%}
+
 {% if page.canonical_url %}
   {%- assign canonical_url = page.canonical_url %}
 {% else %}
-  {%- assign canonical_url = page.url | replace: "index.html", "" | absolute_url %}
+  {%- assign canonical_url = seo_root | append: lang_prefix | append: clean_url %}
 {% endif %}
 
 {%- assign seo_description = page.description | default: page.excerpt | default: site.description -%}
@@ -55,8 +75,12 @@
   {%- assign og_type = "website" -%}
 {%- endif -%}
 
-<title>{{ seo_title | default: site.title }}{% if paginator %}{% unless paginator.page == 1 %} {{ title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
+<title>{{ seo_title | default: site.title }}{% if paginator %}{% unless paginator.page == 1 %} {{ title_separator }} {{ site.data.ui-text[site.active_lang].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
 <meta name="description" content="{{ seo_description }}">
+<meta name="robots" content="{{ page.robots | default: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' }}">
+
+{%- comment -%}Social title falls back to the localized page title.{%- endcomment -%}
+{%- assign social_title = page_title | default: site.title | markdownify | strip_html | strip_newlines | escape_once -%}
 
 {% if author.name %}
   <meta name="author" content="{{ author.name | default: author }}">
@@ -66,13 +90,13 @@
 {% endif %}
 
 <meta property="og:type" content="{{ og_type }}">
-{% if site.active_lang == 'bg' %}
+{% if doc_lang == 'bg' %}
 <meta property="og:locale" content="bg_BG">
 {% else %}
 <meta property="og:locale" content="en_US">
 {% endif %}
 <meta property="og:site_name" content="{{ site.title }}">
-<meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
+<meta property="og:title" content="{{ social_title }}">
 <meta property="og:url" content="{{ canonical_url }}">
 
 {% if seo_description %}
@@ -81,29 +105,26 @@
 
 {% if page_large_image %}
   <meta property="og:image" content="{{ page_large_image }}">
+  <meta property="og:image:alt" content="{{ social_title }}">
 {% elsif page_teaser_image %}
   <meta property="og:image" content="{{ page_teaser_image }}">
+  <meta property="og:image:alt" content="{{ social_title }}">
 {% endif %}
 
+{% if page_large_image %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ page_large_image }}">
+{% else %}
+  <meta name="twitter:card" content="summary">
+  {% if page_teaser_image %}<meta name="twitter:image" content="{{ page_teaser_image }}">{% endif %}
+{% endif %}
+<meta name="twitter:title" content="{{ social_title }}">
+<meta name="twitter:description" content="{{ seo_description }}">
 {% if site.twitter.username %}
   <meta name="twitter:site" content="@{{ site.twitter.username | replace: "@", "" }}">
-  <meta name="twitter:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
-  <meta name="twitter:description" content="{{ seo_description }}">
-  <meta name="twitter:url" content="{{ canonical_url }}">
-
-  {% if page_large_image %}
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="{{ page_large_image }}">
-  {% else %}
-    <meta name="twitter:card" content="summary">
-    {% if page_teaser_image %}
-      <meta name="twitter:image" content="{{ page_teaser_image }}">
-    {% endif %}
-  {% endif %}
-
-  {% if author_twitter %}
-    <meta name="twitter:creator" content="@{{ author_twitter }}">
-  {% endif %}
+{% endif %}
+{% if author_twitter %}
+  <meta name="twitter:creator" content="@{{ author_twitter }}">
 {% endif %}
 
 {% if page.date %}
@@ -124,12 +145,29 @@
   {% endif %}
 {% endif %}
 
+{%- comment -%}
+  jekyll-polyglot deliberately leaves `rel="canonical" href=...` and
+  `hreflang="<default_lang>" href=...` untouched when it rewrites URLs, so the
+  values written here survive verbatim.
+
+  hreflang alternates are only emitted for pages, which genuinely exist in both
+  languages under the same permalink. Articles are language-specific originals
+  (not translations), so declaring an alternate for them would point at a
+  duplicate rather than a translation.
+{%- endcomment -%}
 <link rel="canonical" href="{{ canonical_url }}">
 
-{% if site.languages %}
+{% if site.languages and page.collection != 'posts' %}
   {% for lang in site.languages %}
-    <link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ site.baseurl_root }}/{{ lang }}{{ page.url }}" />
+    {% if lang == default_lang %}
+      <link rel="alternate" hreflang="{{ lang }}" href="{{ seo_root }}{{ clean_url }}">
+    {% else %}
+      <link rel="alternate" hreflang="{{ lang }}" href="{{ seo_root }}/{{ lang }}{{ clean_url }}">
+    {% endif %}
   {% endfor %}
+  {% if doc_lang == default_lang %}
+    <link rel="alternate" hreflang="x-default" href="{{ seo_root }}{{ clean_url }}">
+  {% endif %}
 {% endif %}
 
 {% if paginator.previous_page %}
@@ -139,21 +177,10 @@
   <link rel="next" href="{{ paginator.next_page_path | absolute_url }}">
 {% endif %}
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    {% if site.social.type == "Organization" %}
-      "@type": "Organization",
-      "url": {{ '/' | absolute_url | jsonify }}{% if site.og_image %},
-      "logo": {{ site_og_image | jsonify }}{% endif %}
-    {% else %}
-      "@type": "Person",
-      "name": {{ site.social.name | default: site.name | jsonify }},
-      "url": {{ '/' | absolute_url |jsonify }}{% if site.social.links %},
-      "sameAs": {{ site.social.links | jsonify }}{% endif %}
-    {% endif %}
-  }
-</script>
+{%- comment -%}
+  The site-wide Organization / HairSalon / WebSite entities are emitted by
+  _includes/structured-data.html so we don't publish a conflicting Person node here.
+{%- endcomment -%}
 
 {% if site.google_site_verification %}
   <meta name="google-site-verification" content="{{ site.google_site_verification }}" />

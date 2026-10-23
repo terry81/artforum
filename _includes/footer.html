@@ -4,14 +4,14 @@
       {% for link in site.footer.links %}
         <li>
           <a href="{{ link.url }}" rel="nofollow noopener noreferrer">
-            <i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i>
+            {% include icon.html name=link.svg %}
             {% if page.lang == 'bg' or site.active_lang == 'bg' %}
               {% if link.label == "Email Us" %}
-                {{ site.data.ui-text[site.locale].footer_email_us | default: "Пишете ни" }}
+                {{ site.data.ui-text[site.active_lang].footer_email_us | default: "Пишете ни" }}
               {% elsif link.label == "Call Us" %}
-                {{ site.data.ui-text[site.locale].footer_call_us | default: "Обадете се" }}
+                {{ site.data.ui-text[site.active_lang].footer_call_us | default: "Обадете се" }}
               {% elsif link.label == "Location" %}
-                {{ site.data.ui-text[site.locale].footer_location | default: "Локация" }}
+                {{ site.data.ui-text[site.active_lang].footer_location | default: "Локация" }}
               {% else %}
                 {{ link.label }}
               {% endif %}

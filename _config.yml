@@ -137,13 +137,13 @@ author:
 footer:
   links:
     - label: "Email Us"
-      icon: "fas fa-fw fa-envelope-square"
+      svg: "envelope"
       url: "mailto:artforumhair@gmail.com"
     - label: "Call Us"
-      icon: "fas fa-fw fa-phone-square"
+      svg: "phone"
       url: "tel:+359885501340"
     - label: "Location"
-      icon: "fas fa-fw fa-map-marker-alt"
+      svg: "map-marker"
       url: "https://maps.google.com/?q=Zlatovrah+23+Street,+Sofia,+Bulgaria"
 
 # Reading Files
@@ -163,7 +163,10 @@ exclude:
   - .sass-cache
   - assets/js/plugins
   - assets/js/_main.js
+  - assets/js/dropdown-menu.js
   - assets/js/vendor
+  - assets/css/custom.css
+  - assets/css/sidebar-nav.css
   - assets/images/gallery_BACK
   - Capfile
   - CHANGELOG
@@ -249,12 +252,19 @@ whitelist:
 #  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
 #  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path>/my-awesome-category/index.html ~> path: /
+#
+# NOTE: `path` is intentionally left blank. Setting it makes posts render links
+# to /tags/ and /categories/ archive pages, but no such pages exist in _pages/,
+# so every one of those links 404s. Only a single post currently carries tags or
+# categories, so building archive pages would just create thin duplicate pages.
+# To enable archives later: add _pages/{bg,en}/tags.md and categories.md using
+# the `tags` / `categories` layouts, then restore the paths below.
 category_archive:
   type: liquid
-  path: /categories/
+  path:
 tag_archive:
   type: liquid
-  path: /tags/
+  path:
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
@@ -276,8 +286,8 @@ compress_html:
     envs: development
 
 # Custom scripts
+# dropdown-menu.js is bundled into assets/js/main.min.js (see package.json "uglify")
 after_footer_scripts:
-  - /assets/js/dropdown-menu.js
 
 
 

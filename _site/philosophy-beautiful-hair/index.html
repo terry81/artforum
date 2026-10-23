@@ -11,8 +11,7 @@
 
 <!-- begin _includes/seo.html --><title>Нашата философия за красива коса - Art Forum Hair</title>
 <meta name="description" content="Art Forum Hair - Premium hair extensions salon in Sofia, Bulgaria. Expert hairstylists offering natural human hair extensions, flixy extensions, tape-in extensions, and professional hair care services.">
-
-
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="author" content="Albena Atanasova">
   
 
@@ -30,8 +29,16 @@
 
 
 
-  <meta property="og:image" content="https://artforumhair.com/assets/images/hair_image.jpeg">
+  <meta property="og:image" content="https://artforumhair.com/assets/images/GPA9099.jpg">
+  <meta property="og:image:alt" content="Нашата философия за красива коса">
 
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://artforumhair.com/assets/images/GPA9099.jpg">
+
+<meta name="twitter:title" content="Нашата философия за красива коса">
+<meta name="twitter:description" content="Art Forum Hair - Premium hair extensions salon in Sofia, Bulgaria. Expert hairstylists offering natural human hair extensions, flixy extensions, tape-in extensions, and professional hair care services.">
 
 
 
@@ -43,31 +50,23 @@
   
 
   
-
-
 <link rel="canonical" href="https://artforumhair.com/philosophy-beautiful-hair/">
 
 
   
-    <link rel="alternate" hreflang="bg" href="https://artforumhair.com/bg/philosophy-beautiful-hair/" />
-  
-    <link rel="alternate" hreflang="en" href="https://artforumhair.com/en/philosophy-beautiful-hair/" />
-  
-
-
-
-
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
     
-      "@type": "Person",
-      "name": "Art Forum Hair",
-      "url": "https://artforumhair.com/"
+      <link rel="alternate" hreflang="bg" href="https://artforumhair.com/philosophy-beautiful-hair/">
     
-  }
-</script>
+  
+    
+      <link rel="alternate" hreflang="en" href="https://artforumhair.com/en/philosophy-beautiful-hair/">
+    
+  
+  
+    <link rel="alternate" hreflang="x-default" href="https://artforumhair.com/philosophy-beautiful-hair/">
+  
+
+
 
 
 
@@ -77,45 +76,81 @@
 
 <!-- end _includes/seo.html -->
 
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HairSalon",
-  "name": "Art Forum Hair",
-  "description": "Premium hair extensions salon in Sofia, Bulgaria. Expert hairstylists offering natural human hair extensions, flixy extensions, tape-in extensions, and professional hair care services.",
-  "url": "https://artforumhair.com",
-  "logo": "https://artforumhair.com/assets/images/artforum_logo.jpeg",
-  "image": "https://artforumhair.com/assets/images/hair_image.jpeg",
-  "telephone": "+359885501340",
-  "email": "artforumhair@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Zlatovrah 23 Street",
-    "addressLocality": "Sofia",
-    "addressCountry": "BG"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "42.6977",
-    "longitude": "23.3219"
-  },
-  "priceRange": "$$",
-  "openingHoursSpecification": [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
+      "@type": "HairSalon",
+      "@id": "https://artforumhair.com/#salon",
+      "name": "Art Forum Hair",
+      "description": "Art Forum Hair - Premium hair extensions salon in Sofia, Bulgaria. Expert hairstylists offering natural human hair extensions, flixy extensions, tape-in extensions, and professional hair care services.",
+      "url": "https://artforumhair.com",
+      "logo": "https://artforumhair.com/assets/images/artforum_logo.jpeg",
+      "image": ["https://artforumhair.com/assets/images/GPA9099.jpg"],
+      "telephone": "+359885501340",
+      "email": "artforumhair@gmail.com",
+      "currenciesAccepted": "BGN, EUR",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Златовръх 23",
+        "addressLocality": "София",
+        "addressRegion": "Sofia-City",
+        "addressCountry": "BG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.6977,
+        "longitude": 23.3219
+      },
+      "hasMap": "https://maps.google.com/?q=Zlatovrah+23+Street,+Sofia,+Bulgaria",
+      "areaServed": { "@type": "City", "name": "София" },
+      "knowsLanguage": ["bg", "en"],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
       ],
-      "opens": "09:00",
-      "closes": "19:00"
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hair extensions", "serviceType": "Hair extensions" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tape-in hair extensions", "serviceType": "Tape-in hair extensions" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Professional hair care", "serviceType": "Hair care and treatment" } }
+      ],
+      "founder": { "@type": "Person", "name": "Albena Atanasova" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://artforumhair.com/#website",
+      "url": "https://artforumhair.com",
+      "name": "Art Forum Hair",
+      "inLanguage": "bg-BG",
+      "publisher": { "@id": "https://artforumhair.com/#salon" }
     }
-  ],
-  "sameAs": []
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Начало",
+      "item": "https://artforumhair.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Нашата философия за красива коса",
+      "item": "https://artforumhair.com/philosophy-beautiful-hair/"
+    }
+  ]
 }
 </script>
 
@@ -129,12 +164,11 @@
 
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#4a2c2a">
+<meta name="format-detection" content="telephone=no">
 <link rel="manifest" href="/manifest.json">
 
-<!-- Preconnect to external domains for faster loading -->
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
 
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
@@ -142,17 +176,17 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
 
 
 
     <!-- start custom head snippets -->
 
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- Custom CSS for fashion redesign -->
-<link rel="stylesheet" href="/assets/css/custom.css">
+<!-- Favicons / app icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="Art Forum Hair">
+<meta name="application-name" content="Art Forum Hair">
 
 <!-- end custom head snippets -->
 
@@ -185,7 +219,7 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-          <a class="site-logo" href="/"><img src="/assets/images/artforum_logo.jpeg" alt="Art Forum Hair"></a>
+          <a class="site-logo" href="/"><img src="/assets/images/artforum_logo.jpeg" alt="Art Forum Hair" width="177" height="120" decoding="async"></a>
         
         <a class="site-title" href="/">
           Art Forum Hair
@@ -443,7 +477,7 @@
       
         <li>
           <a href="mailto:artforumhair@gmail.com" rel="nofollow noopener noreferrer">
-            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i>
+            <svg class="afh-icon" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400a48 48 0 0 1-48 48H48a48 48 0 0 1-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154 113.6 21.1 15.4 56.7 47.8 92.3 47.6 35.8.3 72.1-32.8 92.4-47.6 101.9-74.1 131.5-96.3 153.9-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19a48 48 0 0 0-48-48H48A48 48 0 0 0 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
             
               
                 Пишете ни
@@ -454,7 +488,7 @@
       
         <li>
           <a href="tel:+359885501340" rel="nofollow noopener noreferrer">
-            <i class="fas fa-fw fa-phone-square" aria-hidden="true"></i>
+            <svg class="afh-icon" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M493.4 24.6 400.1 3.1a32 32 0 0 0-36.5 18.4l-43.1 100.6a32 32 0 0 0 9.2 37.4l45.5 37.2a329.3 329.3 0 0 1-157.5 157.5l-37.2-45.5a32 32 0 0 0-37.4-9.2L42.5 342.6A32 32 0 0 0 24 379.1l21.5 93.3A32 32 0 0 0 76.7 497C306.3 497 497 311.2 497 55.7a32 32 0 0 0-3.6-31.1z"/></svg>
             
               
                 Обадете се
@@ -465,7 +499,7 @@
       
         <li>
           <a href="https://maps.google.com/?q=Zlatovrah+23+Street,+Sofia,+Bulgaria" rel="nofollow noopener noreferrer">
-            <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i>
+            <svg class="afh-icon" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M172.3 501.7C27 291 0 269.4 0 192a192 192 0 1 1 384 0c0 77.4-27 99-172.3 309.7a24 24 0 0 1-39.4 0zM192 272a80 80 0 1 0 0-160 80 80 0 0 0 0 160z"/></svg>
             
               
                 Локация
@@ -488,7 +522,7 @@
     </div>
 
     
-  <script src="/assets/js/main.min.js"></script>
+  <script src="/assets/js/main.min.js" defer></script>
 
 
 
@@ -496,10 +530,6 @@
 
 
 
-
-  
-    <script src="/assets/js/dropdown-menu.js"></script>
-  
 
 
 

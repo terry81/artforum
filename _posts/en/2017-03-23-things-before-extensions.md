@@ -23,6 +23,6 @@ For all of you who want to have beautiful hair and perfect vision it is importan
 
 If you want to put hair extensions for the first time, clips-in method is probably the best option for you. As the name suggests this method uses clips (hairpins). With their help the extension is securely attached to your natural hair. Also this method is extremely practical, fast and convenient because the hair can be removed and back attached frequently.
 
-![](../assets/images/zGPA8959-1024x682.jpg)
+<img src="/assets/images/zGPA8959-1024x682.jpg" alt="Long natural hair extensions styled at Art Forum Hair" width="1024" height="682" loading="lazy" decoding="async">
 
 For more information about our main coiffeur Albena Atanasova, different hair extension methods and everything which you want to know you can see our website artforumhair.com. If you have more questions please contact us at [facebook](https://www.facebook.com/artforum.bg/?ref=bookmarks).
